@@ -1,2 +1,0 @@
-# Restauco
- Restaurant WebApp project
