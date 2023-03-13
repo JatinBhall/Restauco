@@ -5,12 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <%- include('partials/head') %>
+        <title>Home Page</title>
 </head>
 
 <body>
-    <h1>Home Page</h1>
-    <a href="http://localhost:8080/" >go to home</a>
+    <div class="container">
+        <%- include('partials/header') %>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col "></div>
+            <div class="col">
+                <img src="./images/home/h1_hero1.jpg" alt="">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

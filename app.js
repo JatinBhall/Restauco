@@ -1,4 +1,5 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const createError = require('http-errors');
 const port = 8080;
@@ -15,6 +16,7 @@ const app = express();
 app.set('views', 'views');
 app.set('view engine', "ejs");
 
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/',home);

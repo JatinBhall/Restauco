@@ -1,0 +1,9 @@
+* {
+    font-family: 'Lucida Console', Monospace ;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    background-color: #fff4f2;
+}
