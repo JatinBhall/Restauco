@@ -1,25 +1,50 @@
 * {
-    font-family: 'mitr',Arial, Helvetica, sans-serif;
+    font-family: 'mitr', Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    color:#4d312c;
+    color: #4d312c;
 }
 
-.logo{
+.logo {
     font-size: x-large;
     font-weight: 600;
-    font-family: 'Rampart One'!important;
+    font-family: 'Rampart One' !important;
 }
-.logo > i {
+
+.logo>i {
     border: 2px solid;
     color: white;
     border-radius: 100%;
     background-color: #fe5f41;
     outline: 2px solid #fe5f41;
 }
+
 .custom-button {
-    border-radius:20px;
+    border-radius: 20px;
     font-weight: 400;
     background-color: #fe5f41;
+}
+.custom-button:hover {
+    background-color: #e74929;
+}
+
+a:link {
+    color: #4d312c;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #4d312c;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fe5f41;
+    /* text-decoration: underline; */
+}
+
+a:active {
+    color: #4d312c;
+    text-decoration: none;
 }

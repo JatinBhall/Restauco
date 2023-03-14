@@ -5,3 +5,18 @@ body {}
 .header {
     background-color: #fff4f2;
 }
+
+.header .custom-button {
+    border-radius: 40px;
+    /* font-weight: 600; */
+    font-size: large;
+    background-color: #fe5f41;
+}
+
+.header .custom-button:hover {
+    background-color: #e74929;
+}
+
+.bg-custom {
+    background-color: #fff4f2;
+}

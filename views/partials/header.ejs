@@ -1,37 +1,62 @@
-<div class="container position-relative bg-transparent">
+<div id="topHeader" class="container-fluid position-relative ">
     <div class="position-absolute top-0 start-50 translate-middle-x w-100">
-        <div class="container py-2">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6">
-                    <div class="row d-flex justify-content-between">
-                        <div class="col-sm-12 col-lg-4 logo d-flex">
-                            <i class="fa-solid fa-utensils fs-4 p-2 me-2"></i>
-                            Restauco
+        <div class="container-fluid py-2">
+            <div class="container py-2">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-sm-12 col-lg-4 logo d-flex">
+                                <i class="fa-solid fa-utensils fs-4 p-2 me-2"></i>
+                                Restauco
+                            </div>
+                            <div class=" col-lg-8 d-none d-lg-flex align-items-center justify-content-center p-0 m-0">
+                                <div class="row d-flex justify-content-between p-0 m-0">
+                                    <div class="col-lg-3 d-flex justify-content-center"><a href="">Home</a></div>
+                                    <div class="col-lg-3 d-flex justify-content-center"><a href="">Menu</a></div>
+                                    <div class="col-lg-3 d-flex justify-content-center"><a href="">About</a></div>
+                                    <div class="col-lg-3 d-flex justify-content-center"><a href="">Contact</a></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class=" col-lg-8 d-none d-lg-flex align-items-center justify-content-end p-0 m-0">
-                            <div class="row d-flex justify-content-between p-0 m-0">
-                                <div class="col-lg-3 d-flex justify-content-center"> <a href="">Home</a></div>
-                                <div class="col-lg-3 d-flex justify-content-center"> Menu</div>
-                                <div class="col-lg-3 d-flex justify-content-center"> About</div>
-                                <div class="col-lg-3 d-flex justify-content-center"> Contact</div>
+                    </div>
+                    <div class="d-none d-xs-none d-sm-none d-md-block d-lg-block col-md-6">
+                        <div class="row ">
+                            <div class="col d-flex justify-content-end">
+                                <button type="button" class="btn btn-danger custom-button py-2 px-md-5">Book a
+                                    Table</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="d-none d-xs-none d-sm-none d-md-block d-lg-block col-md-6">
-                    <div class="row ">
-                        <div class="col d-flex justify-content-end">
-                            <button type="button" class="btn btn-danger custom-button py-2 px-md-5">Book a
-                                Table</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 d-lg-none">
-                    menu home about contact
+                <div class="row d-lg-none shadow p-2">
+                    <div class="col-3 d-flex justify-content-center"><a href="">Home</a></div>
+                    <div class="col-3 d-flex justify-content-center"><a href="">Menu</a></div>
+                    <div class="col-3 d-flex justify-content-center"><a href="">About</a></div>
+                    <div class="col-3 d-flex justify-content-center"><a href="">Contact</a></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    window.addEventListener('scroll', function () {
+        let topHeader = document.getElementById('topHeader');
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            topHeader.firstElementChild.firstElementChild.classList.remove('bg-transparent');
+            topHeader.firstElementChild.firstElementChild.classList.add('bg-custom');
+            topHeader.firstElementChild.firstElementChild.classList.add('shadow-lg');
+
+            topHeader.firstElementChild.classList.remove('position-absolute');
+            topHeader.firstElementChild.classList.add('position-fixed');
+        } else {
+            topHeader.firstElementChild.firstElementChild.classList.add('bg-transparent');
+            topHeader.firstElementChild.firstElementChild.classList.remove('bg-custom');
+            topHeader.firstElementChild.firstElementChild.classList.remove('shadow-lg');
+
+            topHeader.firstElementChild.classList.add('position-absolute');
+            topHeader.firstElementChild.classList.remove('position-fixed');
+
+        }
+    });
+
+</script>
