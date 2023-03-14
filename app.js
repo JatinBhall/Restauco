@@ -16,14 +16,14 @@ const app = express();
 app.set('views', 'views');
 app.set('view engine', "ejs");
 
-// app.use(cookieParser());
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/',home);
 app.use('/menu',menu);
 app.use('/about',about);
 app.use('/contact',contact);
 app.use('/reservation',reservation);
+app.use('/',home);
 
 //catch 404 and forward to error handler
 app.use((req, res, next) => {

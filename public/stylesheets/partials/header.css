@@ -1,9 +1,25 @@
 * {
-    font-family: 'Lucida Console', Monospace ;
+    font-family: 'mitr',Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    color:#4d312c;
 }
-.container {
-    background-color: #fff4f2;
+
+.logo{
+    font-size: x-large;
+    font-weight: 600;
+    font-family: 'Rampart One'!important;
+}
+.logo > i {
+    border: 2px solid;
+    color: white;
+    border-radius: 100%;
+    background-color: #fe5f41;
+    outline: 2px solid #fe5f41;
+}
+.custom-button {
+    border-radius:20px;
+    font-weight: 400;
+    background-color: #fe5f41;
 }
