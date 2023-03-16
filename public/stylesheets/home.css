@@ -1,14 +1,62 @@
-* {}
+body {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    color: #94817E;
+}
 
-body {}
+/* for common use */
+.c-white {
+    color: white;
+}
+
+.fs-18 {
+    font-size: 18px !important;
+}
+
+.fs-40 {
+    font-size: 40px !important;
+}
+
+.h-font {
+    font-family: 'mitr', Arial, Helvetica, sans-serif;
+}
+
+.h-color {
+    color: #4d312c;
+}
+
 
 .header {
     background-color: #fff4f2;
 }
 
+.l-color {
+    color: #fe5f41;
+}
+
+.py-10 {
+    padding-top: 96px !important;
+    padding-bottom: 96px !important;
+}
+
+.p-2-5 {
+    padding: 12px !important;
+}
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+/* tital container */
 .header .custom-button {
     border-radius: 40px;
-    /* font-weight: 600; */
     font-size: large;
     background-color: #fe5f41;
 }
@@ -19,4 +67,58 @@ body {}
 
 .bg-custom {
     background-color: #fff4f2;
+}
+
+/* <!-- "Best way to eat healthy food" container --> */
+.healthy-meal .cards {
+    border: #d1c9c8 solid 1px;
+    border-radius: 10px;
+}
+
+.healthy-meal .cards:hover {
+    border: #f1edec00 solid 1px;
+    border-radius: 0;
+    box-shadow: 1px 1px 20px #f1edec9d;
+}
+
+.healthy-meal i {
+    color: #fe5f41;
+    padding: 20px;
+    font-size: xx-large;
+    border-radius: 50%;
+    background-color: #ffeee9;
+}
+
+/* <!-- Menu container --> */
+
+.menu-container {
+    background-color: #4c322d;
+}
+
+.menu-container .custom-button {
+    border-radius: 40px;
+    font-size: large;
+    background-color: #fe5f41;
+}
+
+.menu-container .custom-button:hover {
+    background-color: #e74929;
+    /* text-decoration: underline; */
+}
+
+.menu-container .nav-link {
+    margin-right: 100px;
+}
+
+.menu-container .nav-link>div:hover {
+    border-bottom: #fe5f41 solid 4px;
+}
+
+/* <!-- reservation container --> */
+.reserve-container .custom-button {
+    background-color: #fe5f41;
+}
+
+.reserve-container .custom-button:hover {
+    background-color: #e74929;
 }

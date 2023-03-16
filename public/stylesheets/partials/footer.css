@@ -1,0 +1,32 @@
+.footer-container{
+    background-color: #fff7f3;
+}
+.footer-container i {
+    color: #fe5f41;
+    margin-right: 20px;
+    font-size: larger;
+}
+.quick-links a:link {
+    color: #94817E ;
+    text-decoration: none;
+}
+.quick-links a:visited {
+    color: #94817E ;
+    text-decoration: none;
+}
+.quick-links a:hover {    
+    color: #fe5f41 ;
+    text-decoration: none;
+}
+.quick-links a:active {
+    color: #94817E ;
+    text-decoration: none;
+}
+
+.quick-links div:first-child{
+    color: black;
+}
+
+.contact-link .row :first-child{
+    color: black;
+}
