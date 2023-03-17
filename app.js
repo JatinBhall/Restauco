@@ -9,6 +9,8 @@ const menu = require('./routes/menu');
 const about = require('./routes/about');
 const contact = require('./routes/contact');
 const reservation = require('./routes/reservation');
+const adminLogin = require('./routes/adminLogin');
+const login = require('./routes/login');
 
 const app = express();
 
@@ -19,11 +21,13 @@ app.set('view engine', "ejs");
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/menu',menu);
-app.use('/about',about);
-app.use('/contact',contact);
-app.use('/reservation',reservation);
-app.use('/',home);
+app.use('/menu', menu);
+app.use('/about', about);
+app.use('/contact', contact);
+app.use('/reservation', reservation);
+app.use('/adminLogin', adminLogin);
+app.use('/login', login);
+app.use('/', home);
 
 //catch 404 and forward to error handler
 app.use((req, res, next) => {

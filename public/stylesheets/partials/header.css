@@ -48,3 +48,42 @@
     text-decoration: none;
     border-bottom: #fe614100 solid 4px !important;
 }
+#topHeader .admin a:link{
+    color: white;
+    text-decoration: solid;
+}
+#topHeader .admin a:visited{
+    color: white;
+    text-decoration: solid;
+}
+#topHeader .admin a:hover{
+    color: #fe5f41;
+    text-decoration: solid;
+}
+#topHeader .admin a:active{
+    color: white;
+    text-decoration: solid;
+}
+#topHeader .admin{
+    border-bottom: #fe5f41 solid 3px;
+}
+#topHeader .admin-scroll a:link{
+    color: #4d312c;
+    text-decoration: solid;
+}
+#topHeader .admin-scroll a:visited{
+    color: #4d312c;
+    text-decoration: solid;
+}
+#topHeader .admin-scroll a:hover{
+    color: #fe5f41;
+    text-decoration: solid;
+}
+#topHeader .admin-scroll a:active{
+    color: #4d312c;
+    text-decoration: solid;
+}
+
+#topHeader .admin-scroll{
+    border-bottom: #fe5f41 solid 3px;
+}

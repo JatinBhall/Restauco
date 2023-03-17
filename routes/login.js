@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const aboutView = require('../controller/about');
 
-router.get('/', aboutView);
+// router.use()
+router.get('/', (req, res) => {
+    res.render('login');
+});
 
 module.exports = router;
