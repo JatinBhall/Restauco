@@ -6,9 +6,5 @@ const connection = mysql.createConnection({
     database: 'Restauco'
 });
 
-module.exports = {
-    getConnection() {
-        connection.connect();
-        return connection;
-    }
-};
+
+module.exports = connection;
