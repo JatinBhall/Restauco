@@ -1,0 +1,14 @@
+body {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    color: #94817E;
+}
+.custom-button {
+    border-radius: 40px;
+    font-size: large;
+    background-color: #fe5f41;
+    color: white;
+}
+
+.custom-button:hover {
+    background-color: #e74929;
+}

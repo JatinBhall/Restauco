@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="./stylesheets/loginForm.css">
+        <title>Login Page</title>
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xs-12 col-sm-10 col-md-6 col-lg-4 rounded shadow-lg">
+                <h1 class="text-center h-color h-font py-5">Login as Admin</h1>
+                <form action="/login" method="post">
+                    <input type="text" name="userId" id="userId"  class="form-control rounded-pill shadow-sm my-4 p-2-5" placeholder="Enter User ID">
+                    <input type="password" name="password" id="password" class="form-control rounded-pill shadow-sm my-4 p-2-5" placeholder="Enter Password">
+                    <button type="submit" class="form-control rounded-pill shadow-sm custom-button my-4 p-2-5">LogIn</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

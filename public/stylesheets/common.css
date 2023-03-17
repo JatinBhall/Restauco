@@ -1,0 +1,52 @@
+/* for common use */
+
+.c-white {
+    color: white;
+}
+
+.fs-18 {
+    font-size: 18px !important;
+}
+
+.fs-40 {
+    font-size: 40px !important;
+}
+
+.h-font {
+    font-family: 'mitr', Arial, Helvetica, sans-serif;
+}
+
+.h-color {
+    color: #4d312c;
+}
+
+
+.header {
+    background-color: #fff4f2;
+}
+
+.l-color {
+    color: #fe5f41;
+}
+
+.py-10 {
+    padding-top: 96px !important;
+    padding-bottom: 96px !important;
+}
+
+.p-2-5 {
+    padding: 12px !important;
+}
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}

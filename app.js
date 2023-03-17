@@ -1,5 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const path = require('path');
 const createError = require('http-errors');
 const port = 8080;
@@ -10,6 +11,7 @@ const about = require('./routes/about');
 const contact = require('./routes/contact');
 const reservation = require('./routes/reservation');
 const adminLogin = require('./routes/adminLogin');
+const loginForm = require('./routes/loginForm');
 const login = require('./routes/login');
 
 const app = express();
@@ -20,6 +22,14 @@ app.set('view engine', "ejs");
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(session({
+  secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
+  saveUninitialized: true,
+  cookie: { maxAge: 100 * 60 * 60 },
+  resave: false
+}));
 
 app.use('/menu', menu);
 app.use('/about', about);
@@ -27,6 +37,7 @@ app.use('/contact', contact);
 app.use('/reservation', reservation);
 app.use('/adminLogin', adminLogin);
 app.use('/login', login);
+app.use('/loginForm', loginForm);
 app.use('/', home);
 
 //catch 404 and forward to error handler

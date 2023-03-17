@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const reservationView = require('../controller/reservation');
+const reservationView = require('../controllers/reservation');
 
 router.post('/', reservationView);
 
