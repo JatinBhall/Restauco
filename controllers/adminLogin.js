@@ -8,15 +8,16 @@ const adminLogin = (req, res) => {
         // let adminData = adminModel.read(session.userId);
         // try {
         // await new Promise((resolve, reject) => {
-        res.render('adminView', { name: 'jatin' }, (err, compiled) => {
-            if (err) {
-                console.log('nooo ');
-                // reject(err);
-            } else {
-                console.log('yesss');
-                // resolve(compiled);
-            }
-        });
+        res.render('adminView', { name: 'jatin' });
+        // , (err, compiled) => {
+        //     if (err) {
+        //         console.log('nooo ');
+        //         // reject(err);
+        //     } else {
+        //         console.log('yesss');
+        //         // resolve(compiled);
+        //     }
+        // });
         // })
         // } catch (err) {
         // console.log(err);
