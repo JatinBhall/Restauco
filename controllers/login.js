@@ -1,7 +1,6 @@
 const adminModel = require('../models/adminModel');
 
 const login = async function (req, res) {
-    console.log("in controller / login 1");
     let userId = req.body.userId;
     let password = req.body.password;
     let areValid;
