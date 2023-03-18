@@ -1,0 +1,62 @@
+body {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    color: #94817E;
+    font-size: medium;
+
+}
+
+#topHeader .admin a:link {
+    color: #4d312c;
+    text-decoration: solid;
+}
+
+#topHeader .admin a:visited {
+    color: #4d312c;
+    text-decoration: solid;
+}
+
+#topHeader .admin a:hover {
+    color: #fe5f41;
+    text-decoration: solid;
+}
+
+#topHeader .admin a:active {
+    color: #4d312c;
+    text-decoration: solid;
+}
+
+#topHeader .admin {
+    border-bottom: #fe5f41 solid 3px;
+}
+
+#topHeader .for-shadow {
+    box-shadow: 3px 4px 40px rgba(192, 189, 189, 0.863);
+    background-color: #fff4f2;
+
+}
+
+/* side navbar */
+
+.position-relative-custom {
+    position: relative;
+}
+
+.position-sticky-custom {
+    position: sticky;
+    top: 0px;
+}
+
+.side-navbar-menu .items:hover {
+    background-color: #fe5f41;
+    color: white;
+}
+
+/* menu container */
+.nav-link>div:hover {
+    border-bottom: #fe5f41 solid 4px;
+}
+
+#insertMenu:hover {
+    background-color:#fe5f41 ;
+    color: white !important;
+}

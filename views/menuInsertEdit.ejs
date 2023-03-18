@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head') %>
+        <link rel="stylesheet" href="./stylesheets/menuItemEdit.css">
+        <title>menuItemEdit</title>
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xs-12 col-sm-10 col-md-6 col-lg-4 rounded shadow-lg">
+                <h1 class="text-center h-color h-font py-5">Insert New Item</h1>
+                <form action="/adminLogin/menu/insertDB" method="post">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input type="text" name="title" id="title"
+                                class="form-control rounded-pill shadow-sm my-4 p-2-5" placeholder="Title">
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <input type="text" name="price" id="price"
+                                class="form-control rounded-pill shadow-sm my-2 p-2-5" placeholder="Price">
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <select name="category" id="category" class="form-control rounded-pill my-2 p-2-5">
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Lunch" selected>Lunch</option>
+                                <option value="Dinner">Dinner</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-12 ">
+                            <input type="file" name="image" id="image"
+                                class="form-control rounded-pill shadow-sm my-4 p-2-5" placeholder="Title">
+                        </div>
+                        <div class="col-xs-12 ">
+                            <textarea name="" id="" rows="3" class="form-control rounded my-2 p-2-5"
+                                    placeholder="description"></textarea>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <button type="submit"
+                                class="form-control rounded-pill shadow-sm custom-button my-4 p-2-5">LogIn</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

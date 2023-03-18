@@ -1,6 +1,6 @@
 #topHeader {
     font-family: 'mitr', Arial, Helvetica, sans-serif;
-    color: #4d312c ;
+    color: #4d312c;
 }
 
 .logo {
@@ -22,17 +22,18 @@
     font-weight: 400;
     background-color: #fe5f41;
 }
+
 .custom-button:hover {
     background-color: #e74929;
 }
 
-#topHeader .nav-links  a:link {
+#topHeader .nav-links a:link {
     color: #4d312c;
     text-decoration: none;
     border-bottom: #fe614100 solid 4px !important;
 }
 
-#topHeader .nav-links  a:visited {
+#topHeader .nav-links a:visited {
     color: #4d312c;
     text-decoration: none;
     border-bottom: #fe614100 solid 4px !important;
@@ -48,42 +49,75 @@
     text-decoration: none;
     border-bottom: #fe614100 solid 4px !important;
 }
-#topHeader .admin a:link{
+
+#topHeader .admin a:link {
     color: white;
     text-decoration: solid;
 }
-#topHeader .admin a:visited{
+
+#topHeader .admin a:visited {
     color: white;
     text-decoration: solid;
 }
-#topHeader .admin a:hover{
+
+#topHeader .admin a:hover {
     color: #fe5f41;
     text-decoration: solid;
 }
-#topHeader .admin a:active{
+
+#topHeader .admin a:active {
     color: white;
     text-decoration: solid;
 }
-#topHeader .admin{
+
+#topHeader .admin {
     border-bottom: #fe5f41 solid 3px;
 }
-#topHeader .admin-scroll a:link{
-    color: #4d312c;
-    text-decoration: solid;
-}
-#topHeader .admin-scroll a:visited{
-    color: #4d312c;
-    text-decoration: solid;
-}
-#topHeader .admin-scroll a:hover{
-    color: #fe5f41;
-    text-decoration: solid;
-}
-#topHeader .admin-scroll a:active{
+
+#topHeader .admin-scroll a:link {
     color: #4d312c;
     text-decoration: solid;
 }
 
-#topHeader .admin-scroll{
+#topHeader .admin-scroll a:visited {
+    color: #4d312c;
+    text-decoration: solid;
+}
+
+#topHeader .admin-scroll a:hover {
+    color: #fe5f41;
+    text-decoration: solid;
+}
+
+#topHeader .admin-scroll a:active {
+    color: #4d312c;
+    text-decoration: solid;
+}
+
+#topHeader .admin-scroll:first-child {
+    border-bottom: #fe5f41 solid 3px;
+}
+
+#topHeader .admin-scroll-responsive a:link{
+    color: #4d312c;
+    text-decoration: solid;
+}
+
+#topHeader .admin-scroll-responsive a:visited{
+    color: #4d312c;
+    text-decoration: solid;
+}
+
+#topHeader .admin-scroll-responsive a:hover{
+    color: #fe5f41;
+    text-decoration: solid;
+}
+
+#topHeader .admin-scroll-responsive a:active{
+    color: #4d312c;
+    text-decoration: solid;
+}
+
+#topHeader .admin-scroll-responsive:first-child{
     border-bottom: #fe5f41 solid 3px;
 }

@@ -23,7 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(session({
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
   saveUninitialized: true,
-  cookie: { maxAge: 100 * 60 * 60 },
+  cookie: { maxAge: 1000 * 60 * 60 },
   resave: false
 }));
 app.use(express.json());

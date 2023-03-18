@@ -19,7 +19,7 @@ const login = async function (req, res) {
         req.session.userId = userId;
         res.redirect('/adminLogin');
     } else {
-        req.session.userId = false;
+        // req.session.userId = false;
         res.render('home');
     }
 };

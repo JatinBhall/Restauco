@@ -1,16 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/head') %>
-    <title>admin View</title>
+        <link rel="stylesheet" href="./stylesheets/adminView.css">
+        <title>admin View</title>
 </head>
+
 <body>
     <%- include('partials/header') %>
-    <h1>Admin View</h1>
-    <h2><%- name %></h2>
-    <%- include('partials/footer') %>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex d-md-none p-0">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Menu</a></li>
+                            <li><a class="dropdown-item" href="#">Customer</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <!-- side navbar -->
+            <div class="col-2 d-none d-md-block z-index-custom h-color bg-white">
+                <div class="row">
+                    <div class="col fs-3 h-font py-3 text-center">
+                        <%- name %>
+                    </div>
+                </div>
+                <div class="row text-center side-navbar-menu fs-5">
+                    <div class="col-12 p-3 items"> Menu</div>
+                    <div class="col-12 p-3 items">Customers</div>
+                </div>
+            </div>
+            <!-- main Body -->
+            <div id="menu" class="menu col-12 col-md-10 pt-4 pe-5">
+                <div class="container-fluid px-3 pe-5">
+                    <div class="h-font h-color fs-40 fw-bold py-3">Food Menu</div>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-8 col-md-6 d-flex justify-content-start c-white h-font fs-18 h-color">
+                            <div class="nav-link ">
+                                <div class="d-inline pe-3 me-2 me-lg-4 "> Breakfast</div>
+                            </div>
+                            <div class="nav-link ">
+                                <div class="d-inline pe-3 me-2 me-lg-4 "> Lunch</div>
+                            </div>
+                            <div class="nav-link ">
+                                <div class="d-inline pe-3 me-2 me-lg-4 "> Dinner</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-6 d-flex justify-content-end">
+                            <button type="button" id="insertMenu" class="btn btn-outline-secondary fs-4  c-orange">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            <script src="./javascripts/adminView/insertMenu.js"></script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="customer" class="customer col-12 col-md-9"></div>
+            <div class="h-font h-color fs-40 fw-bold py-3">Customers</div>
+        </div>
+        </div>
+        <%- include('partials/footer') %>
 </body>
+
 </html>

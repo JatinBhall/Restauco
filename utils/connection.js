@@ -6,5 +6,4 @@ const connection = mysql.createConnection({
     database: 'Restauco'
 });
 
-
 module.exports = connection;
