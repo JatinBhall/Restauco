@@ -1,4 +1,7 @@
 insertMenu.onclick = function () {
-    alert('mouse clicked ');
-    window.location.href = "/adminLogin/menu/insert";
+    window.location.href = "menu/insert";
 }
+let logOut = document.querySelector('#log-out');
+logOut.textContent = 'Log Out';
+logOut.href = 'logOut';
+

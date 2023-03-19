@@ -1,33 +1,27 @@
 const adminModel = require('../models/adminModel');
 
-const adminLogin = (req, res) => {
+const logIn = (req, res, next) => {
     let session = req.session;
     if (session.userId) {
-        console.log("passssss");
-        console.log(session.userId);
-        // let adminData = adminModel.read(session.userId);
-        // try {
-        // await new Promise((resolve, reject) => {
-        res.render('adminView', { name: 'jatin' });
-        // , (err, compiled) => {
-        //     if (err) {
-        //         console.log('nooo ');
-        //         // reject(err);
-        //     } else {
-        //         console.log('yesss');
-        //         // resolve(compiled);
-        //     }
-        // });
-        // })
-        // } catch (err) {
-        // console.log(err);
-        // }
-        console.log("finallyyyyyy");
-
+        next();
     } else {
-        console.log("failssss");
         res.redirect('/loginForm');
     }
 }
 
-module.exports = adminLogin;
+const adminView = (req, res) => {
+    res.render('adminView', { name: req.session.userId });
+};
+
+const logOut = (req, res) => {
+    console.log("in side LG");
+    req.session.destroy();
+    res.redirect('/');
+};
+
+
+module.exports = {
+    logIn,
+    adminView,
+    logOut
+};

@@ -17,7 +17,7 @@ const login = async function (req, res) {
             console.log("inside controllers/login.js  read   " + err);
         }
         req.session.userId = userId;
-        res.redirect('/adminLogin');
+        res.redirect('/adminLogin/adminView');
     } else {
         // req.session.userId = false;
         res.render('home');
