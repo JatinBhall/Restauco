@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/head') %>
-        <link rel="stylesheet" id="static-link" href="./../stylesheets/adminView.css">
+        <link rel="stylesheet" id="static-link" href="./../../stylesheets/adminView.css">
         <title>admin View</title>
 </head>
 
 <body>
     <%- include('partials/header') %>
+        <input type="hidden" id="focus" value="<%- focus %>">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 d-flex d-md-none p-0">
@@ -37,8 +38,8 @@
                     </div>
                 </div>
                 <div class="row text-center side-navbar-menu fs-5">
-                    <div class="col-12 p-3 items"> Menu</div>
-                    <div class="col-12 p-3 items">Customers</div>
+                    <div class="col-12 p-3 items" id="menu-button"> Menu</div>
+                    <div class="col-12 p-3 items" id="customer-button">Customers</div>
                 </div>
             </div>
             <!-- main Body -->
@@ -65,12 +66,14 @@
                     </div>
                 </div>
             </div>
-            <div id="customer" class="customer col-12 col-md-9"></div>
-            <div class="h-font h-color fs-40 fw-bold py-3">Customers</div>
+            <div id="customer" class="customer col-12 col-md-9">
+                <div class="h-font h-color fs-40 fw-bold py-3">Customers</div>
+            </div>
         </div>
         </div>
         <%- include('partials/footer') %>
-            <script src="./../javascripts/adminView/insertMenu.js"></script>
+            <script src="./../../javascripts/adminView/insertMenu.js"></script>
+            <script src="./../../javascripts/adminView/mainBody.js"></script>
 </body>
 
 </html>

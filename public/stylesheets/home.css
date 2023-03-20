@@ -73,3 +73,8 @@ body {
 .reserve-container .custom-button:hover {
     background-color: #e74929;
 }
+
+form span {
+    color: red;
+    font-size: small;
+}

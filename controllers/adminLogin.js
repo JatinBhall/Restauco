@@ -10,7 +10,7 @@ const logIn = (req, res, next) => {
 }
 
 const adminView = (req, res) => {
-    res.render('adminView', { name: req.session.userId });
+    res.render('adminView', { name: req.session.userId, focus: "menu" });
 };
 
 const logOut = (req, res) => {

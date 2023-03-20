@@ -131,44 +131,53 @@
         </div>
         <!-- reservation container -->
         <div id="reserve-container" class="container py-10 px-5 reserve-container">
-            <div class="row d-flex justify-content-between">
+            <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-12 col-lg-7">
                     <img class="img-fluid" src="./images/home/woner.jpg" alt="">
                 </div>
-                <div class="col-md-12 col-lg-4 ">
+                <div class="col-md-12 col-lg-4">
                     <!-- reservation form -->
-                    <form action="">
+                    <form action="/reservation" method="post" onsubmit="return formValidation()">
                         <div class="row pt-5 pt-lg-0">
                             <div class="col-12 h-color h-font fs-40 fw-bold ">Book a table</div>
                             <div class="col-12 py-3">
-                                Making a reservation at Délicious restaurant is easy and takes just a
-                                couple of minutes.
+                                Making a reservation at Délicious restaurant is easy
+                            </div>
+                            <div class="col-xs-12 ">
+                                <input type="text" name="name" id="name" class="form-control rounded-pill my-2 p-2-5"
+                                    placeholder="Enter your Name" required>
+                                <span></span>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
-                                <input type="text" name="numberOfGuest" class="form-control rounded-pill my-2 p-2-5"
-                                    placeholder="Number Of Guest">
+                                <input type="text" name="numberOfGuest" id="numberOfGuest"
+                                    class="form-control rounded-pill my-2 p-2-5" placeholder="Number Of Guest" required>
+                                <span></span>
                             </div>
                             <div class="col-xs-12 col-sm-6">
-                                <input type="text" class="form-control rounded-pill my-2 p-2-5" placeholder="Date"
-                                    onblur="(this.type = 'text')" onfocus="(this.type = 'date')">
+                                <input type="text" name="date" id="date" class="form-control rounded-pill my-2 p-2-5"
+                                    placeholder="Date" onblur="(this.type = 'text')" onfocus="(this.type = 'date')"
+                                    required>
                             </div>
                             <div class="col-xs-12 col-sm-6">
-                                <select name="category" id="category" class="form-control rounded-pill my-2 p-2-5">
+                                <select name="category" id="category" class="form-control rounded-pill my-2 p-2-5"
+                                    required>
                                     <option value="Breakfast">Breakfast</option>
                                     <option value="Lunch" selected>Lunch</option>
                                     <option value="Dinner">Dinner</option>
                                 </select>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
-                                <input type="tel" class="form-control rounded-pill my-2 p-2-5"
-                                    placeholder="Phone No.">
+                                <input type="tel" name="phone" id="phone" class="form-control rounded-pill my-2 p-2-5"
+                                    placeholder="Phone No." required>
+                                <span></span>
                             </div>
                             <div class="col-xs-12 col-lg-12">
-                                <input type="text" name="" id="" class="form-control rounded-pill my-2 p-2-5"
+                                <input type="email" name="email" id="email" class="form-control rounded-pill my-2 p-2-5"
                                     placeholder="Email">
+                                <span></span>
                             </div>
                             <div class="col-xs-12 col-lg-12">
-                                <textarea name="" id="" rows="3" class="form-control rounded my-2 p-2-5"
+                                <textarea name="message" id="message" rows="3" class="form-control rounded my-2 p-2-5"
                                     placeholder="Message"></textarea>
                             </div>
                             <div class="col-xs-12 col-lg-12">
@@ -199,7 +208,10 @@
         </div>
         <!-- footer -->
         <%- include('partials/footer') %>
-
+            <script src="./javascripts/home/reservation.js"></script>
+            <!-- <%- if (validation.message) { %>
+                <script>alert(' <% - validation.message %>')</script>
+                <%- } %> -->
 </body>
 
 </html>
