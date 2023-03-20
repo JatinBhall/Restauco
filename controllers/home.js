@@ -1,6 +1,5 @@
 const homeView = (req, res) => {
-    // res.render('home');
-    res.send('<h1> home </h1>');
+    res.render('home', { locals: null });
 };
 
 module.exports = homeView;

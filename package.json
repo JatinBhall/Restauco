@@ -16,6 +16,7 @@
     "express-session": "^1.17.3",
     "http-errors": "^2.0.0",
     "mysql": "^2.18.1",
+    "nodemailer": "^6.9.1",
     "path": "^0.12.7",
     "serve-static": "^1.15.0",
     "session": "^0.1.0"

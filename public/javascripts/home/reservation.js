@@ -1,8 +1,13 @@
 // reservation form validation
+let name = document.querySelector("form #name");
+let numberOfGuest = document.querySelector("form #numberOfGuest");
+let date = document.querySelector("form #date");
+let category = document.querySelector("form #category");
+let phone = document.querySelector("form #phone");
+let email = document.querySelector("form #email");
+let message = document.querySelector("form #message");
+
 function formValidation() {
-    let numberOfGuest = document.querySelector("form #numberOfGuest");
-    let phone = document.querySelector("form #phone");
-    let email = document.querySelector("form #email");
     let success = true;
 
     if (!(numberOfGuest.value < 80 && numberOfGuest.value > 0)) {
@@ -31,7 +36,20 @@ function formValidation() {
     if (!success) {
         return false;
     } else {
-        alert(date.value);
         return true;
     }
 }
+
+function serverSideValidation(locals) {
+    numberOfGuest.nextElementSibling.textContent = locals.numberOfGuest.errMessage;
+    phone.nextElementSibling.textContent = locals.phone.errMessage;
+    email.nextElementSibling.textContent = locals.email.errMessage;
+
+    name.value = locals.data.name;
+    numberOfGuest.value = locals.data.numberOfGuest;
+    date.value = locals.data.date;
+    category.value = locals.data.category;
+    phone.value = locals.data.phone;
+    email.value = locals.data.email;
+    message.value = locals.data.message;
+};

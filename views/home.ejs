@@ -173,7 +173,7 @@
                             </div>
                             <div class="col-xs-12 col-lg-12">
                                 <input type="email" name="email" id="email" class="form-control rounded-pill my-2 p-2-5"
-                                    placeholder="Email">
+                                    placeholder="Email" required>
                                 <span></span>
                             </div>
                             <div class="col-xs-12 col-lg-12">
@@ -208,10 +208,18 @@
         </div>
         <!-- footer -->
         <%- include('partials/footer') %>
-            <script src="./javascripts/home/reservation.js"></script>
-            <!-- <%- if (validation.message) { %>
-                <script>alert(' <% - validation.message %>')</script>
-                <%- } %> -->
+
 </body>
+<script src="./javascripts/home/reservation.js"></script>
+<script>
+    let invalidData = '<%- locals%>';
+    if (invalidData) {
+        let locals = JSON.parse(invalidData);
+        alert(locals.errMessage);
+        serverSideValidation(locals);
+    }
+
+
+</script>
 
 </html>
