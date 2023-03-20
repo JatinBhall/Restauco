@@ -10,7 +10,7 @@ const reservationView = async (req, res) => {
         phone: req.body.phone,
         email: req.body.email,
         message: req.body.message,
-        tables : [],
+        tables: [],
     };
     let validation = {
         success: true,
@@ -103,7 +103,7 @@ const reservationView = async (req, res) => {
             }
             let customerData = JSON.stringify(data);
             email.reservationMail(data);
-            res.render('successfulReservation', customerData);
+            res.render('successfulReservation', { customerData: customerData });
             return;
         } catch (err) {
             console.log(err);

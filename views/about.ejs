@@ -1,13 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Page</title>
+    <%- include('partials/head') %>
+        <link rel="stylesheet" href="./stylesheets/about.css">
+        <title>About Page</title>
 </head>
+
 <body>
-    <h1>About Page</h1>
-    <a href="http://localhost:8080/" >go to home</a>
+    <%- include('partials/header') %>
+        <!-- "title" container -->
+        <div class="container-fluid header pt-5 p-lg-0 h-font h-color">
+            <div class="row pt-5 pt-lg-0">
+                <div class="col-xs-12 col-lg-6 d-flex align-items-stretch ps-2 ps-lg-5">
+                    <div class="d-flex align-items-center px-5">
+                        <div class="row pt-5 pt-lg-0">
+                            <div class="col-12 fs-1 fw-bold pt-5 pt-lg-0">
+                                About Us
+                            </div>
+                            <div class="col-12 fs-5 my-4">
+                                Making a reservation at Délicious restaurant is easy and takes just a couple of minutes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-6">
+                    <img class="img-fluid" src="./images/home/h1_hero1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- "Best way to eat healthy food" container -->
+        <div class="container py-10  healthy-meal">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-md-11 col-lg-8 col-xl-7 fs-40 fw-bold h-font h-color d-flex justify-content-center">
+                    Best way to eat healthy food
+                </div>
+                <div class="col-md-11 col-lg-8 col-xl-7 fs-18 p-3 d-flex justify-content-center">
+                    Making a reservation at Délicious restaurant is easy and takes just a
+                    couple of minutes.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="row text-center p-5 m-2 cards">
+                        <div class="col-12">
+                            <i class="fa-solid fa-wheat-awn"></i>
+                        </div>
+                        <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
+                            Healthy Meal
+                        </div>
+                        <div class="col-12 px-3">
+                            Making a reservation at Délicious restaurant is easy and takes just a
+                            couple of minutes.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="row text-center p-5 m-2 cards">
+                        <div class="col-12">
+                            <i class="fa-solid fa-burger"></i>
+                        </div>
+                        <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
+                            Fast Food
+                        </div>
+                        <div class="col-12 px-3">
+                            Making a reservation at Délicious restaurant is easy and takes just a
+                            couple of minutes.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="row text-center p-5 m-2 cards">
+                        <div class="col-12">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
+                            Delicious Coffee
+                        </div>
+                        <div class="col-12 px-3">
+                            Making a reservation at Délicious restaurant is easy and takes just a
+                            couple of minutes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- reservation container -->
+        <div tabindex="0" id="reserve-container" class="container pb-5 pt-0 px-5 reserve-container">
+            <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-md-12 col-lg-7">
+                    <img class="img-fluid" src="./images/home/woner.jpg" alt="">
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <!-- reservation form -->
+                    <form action="/reservation" method="post" onsubmit="return formValidation()">
+                        <div class="row pt-5 pt-lg-0">
+                            <div class="col-12 h-color h-font fs-40 fw-bold ">Book a table</div>
+                            <div class="col-12 py-3">
+                                Making a reservation at Délicious restaurant is easy
+                            </div>
+                            <div class="col-xs-12 ">
+                                <input type="text" name="name" id="name" class="form-control rounded-pill my-2 p-2-5"
+                                    placeholder="Enter your Name" required>
+                                <span></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+                                <input type="text" name="numberOfGuest" id="numberOfGuest"
+                                    class="form-control rounded-pill my-2 p-2-5" placeholder="Number Of Guest" required>
+                                <span></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <input type="text" name="date" id="date" class="form-control rounded-pill my-2 p-2-5"
+                                    placeholder="Date" onblur="(this.type = 'text')" onfocus="(this.type = 'date')"
+                                    required>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <select name="category" id="category" class="form-control rounded-pill my-2 p-2-5"
+                                    required>
+                                    <option value="Breakfast">Breakfast</option>
+                                    <option value="Lunch" selected>Lunch</option>
+                                    <option value="Dinner">Dinner</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+                                <input type="tel" name="phone" id="phone" class="form-control rounded-pill my-2 p-2-5"
+                                    placeholder="Phone No." required>
+                                <span></span>
+                            </div>
+                            <div class="col-xs-12 col-lg-12">
+                                <input type="email" name="email" id="email" class="form-control rounded-pill my-2 p-2-5"
+                                    placeholder="Email" required>
+                                <span></span>
+                            </div>
+                            <div class="col-xs-12 col-lg-12">
+                                <textarea name="message" id="message" rows="3" class="form-control rounded my-2 p-2-5"
+                                    placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-xs-12 col-lg-12">
+                                <button class="button btn btn-danger rounded-pill custom-button w-100 my-2 p-2-5">Sent
+                                    Request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- photo gellary container -->
+        <div class="container-fluid pt-5">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
+                    <img class="img-fluid" src="./images/home/instra1.jpg" alt="">
+                </div>
+                <div class="d-none d-sm-block col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
+                    <img class="img-fluid" src="./images/home/instra2.jpg" alt="">
+                </div>
+                <div class="d-none d-md-block col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
+                    <img class="img-fluid" src="./images/home/instra3.jpg" alt="">
+                </div>
+                <div class="d-none d-lg-block col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
+                    <img class="img-fluid" src="./images/home/instra4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <%- include('partials/footer') %>
+            <script src="./javascripts/home/reservation.js"></script>
+
 </body>
+
 </html>

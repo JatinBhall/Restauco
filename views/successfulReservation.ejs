@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include('partials/head') %>
+        <link rel="stylesheet" href="./stylesheets/successfulReservation.css">
+        <title>successfulReservation</title>
 </head>
+
 <body>
-    <h1>successful reservation</h1>
-    <a href="/">home</a>
+    <%- include('partials/header') %>
+        <!-- "title" container -->
+        <div class="container-fluid header pt-5 p-lg-0 h-font h-color">
+            <div class="row pt-5 pt-lg-0">
+                <div class="col-xs-12 col-lg-6 d-flex align-items-stretch ps-2 ps-lg-5">
+                    <div class="d-flex align-items-center px-5">
+                        <div class="row pt-5 pt-lg-0">
+                            <div class="col-12 fs-1 fw-bold pt-5 pt-lg-0">
+                                Reservation Successful
+                            </div>
+                            <div class="col-12 fs-5 my-4">
+                                Making a reservation at Délicious restaurant is easy and takes just a couple of minutes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-6">
+                    <img class="img-fluid" src="./images/home/h1_hero1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- customer data -->
+        <div class="container customer-data text-center shadow-lg rounded p-5 my-4">
+            <h1 class="h-color h-font fw-bold py-3">Booking Successful</h1>
+            <h2 class="h-color h-font fw-bold py-3"></h2>
+            <p class="py-3 px-0 px-lg-5 mx-0 mx-lg-5 fs-4 text-center"></p>
+            <h2 class="fw-bold h-font h-color">ThankYou</h2>`,
+        </div>
+
+        <%- include('partials/footer') %>
+
+            <script>
+                let data = JSON.parse('<%- customerData %>');
+                document.querySelector('.customer-data h2').textContent = `Hello ${data.name}`;
+                document.querySelector('.customer-data p').innerHTML = `Your reservation is complete at Restauco on <strong>${data.date}</strong> for ${data.category}. You booked table number
+                <strong>${data.tables.toString()}</strong>.`;
+            </script>
 </body>
+
 </html>

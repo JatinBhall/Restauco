@@ -1,0 +1,45 @@
+body {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    color: #94817E;
+    font-size: medium !important;
+}
+
+/* tital container */
+.header .custom-button {
+    border-radius: 40px;
+    font-size: large;
+    background-color: #fe5f41;
+}
+
+.header .custom-button:hover {
+    background-color: #e74929;
+}
+
+.bg-custom {
+    background-color: #fff4f2;
+}
+
+/* <!-- Menu container --> */
+
+.menu-container {
+    /* background-color: #4c322d; */
+}
+
+.menu-container .custom-button {
+    border-radius: 40px;
+    font-size: large;
+    background-color: #fe5f41;
+}
+
+.menu-container .custom-button:hover {
+    background-color: #e74929;
+    /* text-decoration: underline; */
+}
+
+.menu-container .nav-link {
+    margin-right: 100px;
+}
+
+.menu-container .nav-link>div:hover {
+    border-bottom: #fe5f41 solid 4px;
+}

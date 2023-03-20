@@ -1,0 +1,54 @@
+body {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    color: #94817E;
+    font-size: medium !important;
+}
+
+/* tital container */
+.header .custom-button {
+    border-radius: 40px;
+    font-size: large;
+    background-color: #fe5f41;
+}
+
+.header .custom-button:hover {
+    background-color: #e74929;
+}
+
+.bg-custom {
+    background-color: #fff4f2;
+}
+
+/* <!-- "Best way to eat healthy food" container --> */
+.healthy-meal .cards {
+    border: #d1c9c8 solid 1px;
+    border-radius: 10px;
+}
+
+.healthy-meal .cards:hover {
+    border: #f1edec00 solid 1px;
+    border-radius: 0;
+    box-shadow: 1px 1px 20px #f1edec9d;
+}
+
+.healthy-meal i {
+    color: #fe5f41;
+    padding: 20px;
+    font-size: xx-large;
+    border-radius: 50%;
+    background-color: #ffeee9;
+}
+
+/* <!-- reservation container --> */
+.reserve-container .custom-button {
+    background-color: #fe5f41;
+}
+
+.reserve-container .custom-button:hover {
+    background-color: #e74929;
+}
+
+form span {
+    color: red;
+    font-size: small;
+}
