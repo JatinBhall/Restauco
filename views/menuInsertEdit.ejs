@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/head') %>
-        <link rel="stylesheet" href="./../stylesheets/menuItemEdit.css">
+        <link rel="stylesheet" href="./../../stylesheets/adminView/menu/menuInsertEdit.css">
         <title>menuItemEdit</title>
 </head>
 
@@ -15,15 +15,19 @@
         <div class="row d-flex justify-content-center">
             <div class="col-xs-12 col-sm-10 col-md-8 col-lg-4 rounded shadow-lg">
                 <h1 class="text-center h-color h-font pt-5">Insert New Item</h1>
-                <form action="/adminLogin/menu/insertDB" method="post" enctype="multipart/form-data">
+                <form action="/adminLogin/menu/insertDB" method="post" onsubmit="return formValidation()"
+                    enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-xs-12">
                             <input type="text" name="title" id="title"
-                                class="form-control rounded-pill shadow-sm my-4 p-2-5" placeholder="Title">
+                                class="form-control rounded-pill shadow-sm my-2 p-2-5" placeholder="Title" required>
+                            <span></span>
                         </div>
                         <div class="col-xs-12 col-sm-6">
                             <input type="text" name="price" id="price"
-                                class="form-control rounded-pill shadow-sm my-2 p-2-5" placeholder="Price">
+                                class="form-control rounded-pill shadow-sm my-2 p-2-5" placeholder="Price in $"
+                                required>
+                            <span></span>
                         </div>
                         <div class="col-xs-12 col-sm-6">
                             <select name="category" id="category" class="form-control rounded-pill my-2 p-2-5">
@@ -34,21 +38,31 @@
                         </div>
                         <div class="col-xs-12 ">
                             <input type="file" name="image" id="image"
-                                class="form-control rounded-pill shadow-sm my-4 p-2-5" placeholder="Title">
+                                class="form-control rounded-pill shadow-sm my-2 p-2-5" placeholder="Title" required>
+                            <span></span>
                         </div>
                         <div class="col-xs-12 ">
-                            <textarea name="" id="" rows="3" class="form-control rounded my-2 p-2-5"
-                                    placeholder="description"></textarea>
+                            <textarea name="description" id="description" rows="3"
+                                class="form-control rounded my-1 p-2-5" placeholder="description"></textarea>
                         </div>
                         <div class="col-xs-12">
                             <button type="submit"
-                                class="form-control rounded-pill shadow-sm custom-button my-4 p-2-5">Add Item</button>
+                                class="form-control rounded-pill c-white shadow-sm custom-button my-2 p-2-5">Add
+                                Item</button>
+                        </div>
+                        <div class="col-12">
+                            <a href="/adminLogin/adminView">
+                                <button type="button"
+                                    class="form-control rounded-pill c-white shadow-sm custom-button my-2 mb-4 p-2-5">Back
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script src="./../../javascripts/adminView/menu/menuInsertEdit.js"></script>
 </body>
 
 </html>

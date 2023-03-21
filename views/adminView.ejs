@@ -12,37 +12,38 @@
 
 <body>
     <%- include('partials/header') %>
-        <input type="hidden" id="focus" value="<%- focus %>">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 d-flex d-md-none p-0">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-bars"></i>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Menu</a></li>
-                            <li><a class="dropdown-item" href="#">Customer</a></li>
-                        </ul>
-                    </div>
+        <!-- for mobile view -->
+        <div class="row">
+            <div class="col-12 d-flex d-md-none p-0">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Menu</a></li>
+                        <li><a class="dropdown-item" href="#">Customer</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+        </div>
         <div class="row ">
             <!-- side navbar -->
-            <div class="col-2 d-none d-md-block z-index-custom h-color bg-white">
-                <div class="row">
-                    <div class="col fs-3 h-font py-3 text-center">
+            <div class="col-2 d-none d-md-block z-index-custom h-color bg-white side-navbar">
+                <div class="row border-custom">
+                    <div class="col fs-3 h-font  h-color py-3 text-center">
                         <%- name %>
                     </div>
                 </div>
                 <div class="row text-center side-navbar-menu fs-5">
-                    <div class="col-12 p-3 items" id="menu-button"> Menu</div>
-                    <div class="col-12 p-3 items" id="customer-button">Customers</div>
+                    <div class="col-12 p-3 items item1" onclick="changeFocus('menu')" id="menu-button"> Menu</div>
+                    <div class="col-12 p-3 items item2" onclick="changeFocus('customer')" id="customer-button">Customers
+                    </div>
                 </div>
             </div>
             <!-- main Body -->
+            <!-- menu container -->
             <div id="menu" class="menu col-12 col-md-10 pt-4 pe-5">
                 <div class="container-fluid px-3 pe-5">
                     <div class="h-font h-color fs-40 fw-bold py-3">Food Menu</div>
@@ -64,8 +65,12 @@
                             </button>
                         </div>
                     </div>
+                    <div class="container-fluid">
+                        <div class="row"></div>
+                    </div>
                 </div>
             </div>
+            <!-- customer container -->
             <div id="customer" class="customer col-12 col-md-9">
                 <div class="h-font h-color fs-40 fw-bold py-3">Customers</div>
             </div>
@@ -74,6 +79,10 @@
         <%- include('partials/footer') %>
             <script src="./../../javascripts/adminView/insertMenu.js"></script>
             <script src="./../../javascripts/adminView/mainBody.js"></script>
+            <script>
+                changeFocus('<%- focus%>');
+            </script>
+
 </body>
 
 </html>

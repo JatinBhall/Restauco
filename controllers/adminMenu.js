@@ -1,11 +1,10 @@
 const path = require('path');
 const menuModel = require('../models/menuModel');
 const rootPath = (path.dirname(process.mainModule.filename));
-const imageRelativePath = rootPath + '/public/images/menu';
+const imageRelativePath = rootPath + '/public/images/menu/';
 
 const insert = (req, res) => {
-    console.log("menu insert");
-    res.render('menuInsertEdit');
+    res.render('menuInsertEdit', { locals: null });
 };
 
 const insertDB = async (req, res) => {
@@ -17,18 +16,54 @@ const insertDB = async (req, res) => {
         description: req.body.description,
         imagePath: imageRelativePath + image.name,
     };
-    image.mv(menuItem.imagePath);
-    let success;
+    let validation = {
+        success: true,
+    }
+
     try {
-        success = await menuModel.insert(menuItem);
+        if ((menuItem.title == null) || (menuItem.title == "")) {
+            validation.success = false;
+            validation.title.errMessage = "Invalid Input,It's empty";
+        }
+
+        let amount = Number(menuItem.price);
+        if ((menuItem.price == "") || (amount <= 0)) {
+            validation.success = false;
+            validation.price.errMessage = "Invalid amount";
+        }
+
+        // Allowing file type
+        let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+
+        if (!allowedExtensions.exec(menuItem.imagePath)) {
+            validation.success = false;
+            validation.price.errMessage = "Invalid file path";
+        }
     } catch (err) {
         console.log(err);
+        validation.success = false;
     }
-    if (success) {
+
+    try {
+        if (!validation.success) {
+            throw "Invalid Inputs. Try Again ☺.";
+        }
+        try {
+            image.mv(menuItem.imagePath);
+            await menuModel.insert(menuItem);
+        } catch (err) {
+            console.log(err);
+            throw "Something went wrong try Again ☺ ";
+        }
         res.render('adminView', { name: req.session.userId, focus: "menu" });
-    } else {
-        res.render('home');
+    } catch (err) {
+        validation.errMessage = err;
+        validation.data = menuItem;
+        let locals = JSON.stringify(validation);
+        res.render('menuInsertEdit', locals);
     }
+
+
 };
 
 const update = (req, res) => { console.log('menu update'); };
