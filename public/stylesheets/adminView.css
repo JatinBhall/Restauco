@@ -54,3 +54,14 @@ body {
     background-color: #fe5f41;
     color: white !important;
 }
+
+#menu .cards {
+    border: #d1c9c8 solid 1px;
+    border-radius: 10px;
+}
+
+#menu .cards:hover {
+    border: #f1edec00 solid 1px;
+    border-radius: 0;
+    box-shadow: 1px 1px 20px #f1edec9d;
+}

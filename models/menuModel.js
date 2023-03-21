@@ -1,3 +1,4 @@
+const { connect } = require('../utils/connection');
 const connection = require('../utils/connection');
 
 function insert(menuItem) {
@@ -14,6 +15,19 @@ function insert(menuItem) {
     })
 };
 
+function readCategory(category) {
+    return new Promise((resolve, reject) => {
+        let sql = 'SELECT `itemId`, `title`, `price`, `description`, `imagePath`, `category` FROM `menu_item` WHERE `category`= ?';
+        connection.query(sql, category, (err, result, fields) => {
+            if (err) {
+                reject(err);
+            }
+            resolve(result);
+        });
+    })
+}
+
 module.exports = {
     insert,
+    readCategory,
 }

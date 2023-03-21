@@ -1,4 +1,4 @@
-const adminModel = require('../models/adminModel');
+const menuModel = require('../models/menuModel');
 
 const logIn = (req, res, next) => {
     let session = req.session;
@@ -9,8 +9,28 @@ const logIn = (req, res, next) => {
     }
 }
 
-const adminView = (req, res) => {
-    res.render('adminView', { name: req.session.userId, focus: "menu" });
+const adminView = async (req, res) => {
+    let data = {
+        userId: req.session.userId,
+        // menu : { 
+        // data  :'';
+        // },
+    };
+    data.focus = 'menu';
+    if (req.query.focus) {
+        data.focus = req.query.focus;
+    }
+
+    try {
+        data.menu = { breakFast: await menuModel.readCategory('Breakfast') };
+        data.menu.lunch = await menuModel.readCategory('Lunch');
+        data.menu.dinner = await menuModel.readCategory('Dinner');
+    } catch (error) {
+        console.log(error);
+    }
+
+    let locals = JSON.stringify(data);
+    res.render('adminView', { locals: locals });
 };
 
 const logOut = (req, res) => {

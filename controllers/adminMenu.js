@@ -23,13 +23,17 @@ const insertDB = async (req, res) => {
     try {
         if ((menuItem.title == null) || (menuItem.title == "")) {
             validation.success = false;
-            validation.title.errMessage = "Invalid Input,It's empty";
+            validation.title = { errMessage: `Invalid Input,It's empty` };
+        } else {
+            validation.title = { errMessage: `` };
         }
 
         let amount = Number(menuItem.price);
         if ((menuItem.price == "") || (amount <= 0)) {
             validation.success = false;
-            validation.price.errMessage = "Invalid amount";
+            validation.price = { errMessage: `Invalid amount` };
+        } else {
+            validation.price = { errMessage: `` };
         }
 
         // Allowing file type
@@ -37,8 +41,11 @@ const insertDB = async (req, res) => {
 
         if (!allowedExtensions.exec(menuItem.imagePath)) {
             validation.success = false;
-            validation.price.errMessage = "Invalid file path";
+            validation.image = { errMessage: `Invalid file path` };
+        } else {
+            validation.image = { errMessage: `` };
         }
+
     } catch (err) {
         console.log(err);
         validation.success = false;
@@ -55,12 +62,18 @@ const insertDB = async (req, res) => {
             console.log(err);
             throw "Something went wrong try Again ☺ ";
         }
-        res.render('adminView', { name: req.session.userId, focus: "menu" });
+        res.redirect("/adminLogin/adminView?focus" + 'menu');
     } catch (err) {
+        console.log(err);
         validation.errMessage = err;
-        validation.data = menuItem;
+        validation.menuItem = {
+            title: menuItem.title,
+            price: menuItem.price,
+            category: menuItem.category,
+            description: menuItem.description
+        }
         let locals = JSON.stringify(validation);
-        res.render('menuInsertEdit', locals);
+        res.render('menuInsertEdit', { locals: locals });
     }
 
 

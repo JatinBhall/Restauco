@@ -32,8 +32,7 @@
             <!-- side navbar -->
             <div class="col-2 d-none d-md-block z-index-custom h-color bg-white side-navbar">
                 <div class="row border-custom">
-                    <div class="col fs-3 h-font  h-color py-3 text-center">
-                        <%- name %>
+                    <div id="username" class="col fs-3 h-font  h-color py-3 text-center">
                     </div>
                 </div>
                 <div class="row text-center side-navbar-menu fs-5">
@@ -66,7 +65,18 @@
                         </div>
                     </div>
                     <div class="container-fluid">
-                        <div class="row"></div>
+                        <div class="row">
+                                <div class="col-12 col-sm-4 col-lg-3">
+                                    <div class="row text-center p-5 m-2 cards">
+                                        <div class="col-12 p-2">
+                                        </div>
+                                        <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
+                                        </div>
+                                        <div class="col-12 px-3">
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,10 +87,14 @@
         </div>
         </div>
         <%- include('partials/footer') %>
-            <script src="./../../javascripts/adminView/insertMenu.js"></script>
+            <script src="./../../javascripts/adminView/logOut.js"></script>
             <script src="./../../javascripts/adminView/mainBody.js"></script>
             <script>
-                changeFocus('<%- focus%>');
+                let locals = '<%- locals%>';
+                let data = JSON.parse(locals);
+                document.querySelector("#username").textContent = data.userId;
+                changeFocus(data.focus);
+                console.log(data);
             </script>
 
 </body>

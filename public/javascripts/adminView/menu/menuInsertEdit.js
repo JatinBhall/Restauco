@@ -38,3 +38,15 @@ function formValidation() {
         return false;
     }
 }
+
+function serverSideValidation(data) {
+    title.value=data.menuItem.title;
+    price.value=data.menuItem.price;
+    category.value=data.menuItem.category;
+    description.value=data.menuItem.description;
+
+    title.nextElementSibling.textContent = data.title.errMessage;
+    price.nextElementSibling.textContent = data.price.errMessage;
+    image.nextElementSibling.textContent = data.image.errMessage;
+
+}

@@ -63,6 +63,14 @@
         </div>
     </div>
     <script src="./../../javascripts/adminView/menu/menuInsertEdit.js"></script>
+    <script>
+        let invalidData = '<%- locals%>';
+        if (invalidData) {
+            let locals = JSON.parse(invalidData);
+            alert(locals.errMessage);
+            serverSideValidation(locals);
+        }
+    </script>
 </body>
 
 </html>
