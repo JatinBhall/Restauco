@@ -12,90 +12,209 @@
 
 <body>
     <%- include('partials/header') %>
-        <!-- for mobile view -->
-        <div class="row">
-            <div class="col-12 d-flex d-md-none p-0">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Menu</a></li>
-                        <li><a class="dropdown-item" href="#">Customer</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="row ">
-            <!-- side navbar -->
-            <div class="col-2 d-none d-md-block z-index-custom h-color bg-white side-navbar">
-                <div class="row border-custom">
-                    <div id="username" class="col fs-3 h-font  h-color py-3 text-center">
-                    </div>
-                </div>
-                <div class="row text-center side-navbar-menu fs-5">
-                    <div class="col-12 p-3 items item1" onclick="changeFocus('menu')" id="menu-button"> Menu</div>
-                    <div class="col-12 p-3 items item2" onclick="changeFocus('customer')" id="customer-button">Customers
+        <% let imageBasePath='./../../images/menu/' %>
+            <!-- for mobile view -->
+            <div class="row">
+                <div class="col-12 d-flex d-md-none p-0">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Menu</a></li>
+                            <li><a class="dropdown-item" href="#">Customer</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <!-- main Body -->
-            <!-- menu container -->
-            <div id="menu" class="menu col-12 col-md-10 pt-4 pe-5">
-                <div class="container-fluid px-3 pe-5">
-                    <div class="h-font h-color fs-40 fw-bold py-3">Food Menu</div>
-                    <div class="row d-flex justify-content-between">
-                        <div class="col-8 col-md-6 d-flex justify-content-start c-white h-font fs-18 h-color">
-                            <div class="nav-link ">
-                                <div class="d-inline pe-3 me-2 me-lg-4 "> Breakfast</div>
-                            </div>
-                            <div class="nav-link ">
-                                <div class="d-inline pe-3 me-2 me-lg-4 "> Lunch</div>
-                            </div>
-                            <div class="nav-link ">
-                                <div class="d-inline pe-3 me-2 me-lg-4 "> Dinner</div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-6 d-flex justify-content-end">
-                            <button type="button" id="insertMenu" class="btn btn-outline-secondary fs-4  c-orange">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
+            </div>
+            <div class="row ">
+                <!-- side navbar -->
+                <div class="col-2 d-none d-md-block z-index-custom h-color bg-white side-navbar">
+                    <div class="row border-custom">
+                        <div id="username" class="col fs-3 h-font  h-color py-3 text-center">
                         </div>
                     </div>
-                    <div class="container-fluid">
-                        <div class="row">
-                                <div class="col-12 col-sm-4 col-lg-3">
-                                    <div class="row text-center p-5 m-2 cards">
-                                        <div class="col-12 p-2">
-                                        </div>
-                                        <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
-                                        </div>
-                                        <div class="col-12 px-3">
-                                        </div>
+                    <div class="row text-center side-navbar-menu fs-5">
+                        <div class="col-12 p-3 items item1" onclick="changeFocus('menu')" id="menu-button"> Menu</div>
+                        <div class="col-12 p-3 items item2" onclick="changeFocus('customer')" id="customer-button">
+                            Customers
+                        </div>
+                    </div>
+                </div>
+                <!-- main Body -->
+                <!-- menu container -->
+                <div id="menu" class="menu col-12 col-md-10 pt-4 pe-0 pe-md-5">
+                    <div class="container-fluid px-3 pe-5">
+                        <div class="h-font h-color fs-40 fw-bold py-3">Food Menu</div>
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-8 col-md-6 d-flex justify-content-start c-white h-font fs-18 h-color">
+                                <div class="nav-link ">
+                                    <div class="d-inline pe-3 me-2 me-lg-4 menu-item-button1"
+                                        onclick="menuItemFocus('breakFast')">
+                                        Breakfast</div>
+                                </div>
+                                <div class="nav-link ">
+                                    <div class="d-inline pe-3 me-2 me-lg-4 menu-item-button2"
+                                        onclick="menuItemFocus('lunch')"> Lunch
                                     </div>
                                 </div>
+                                <div class="nav-link ">
+                                    <div class="d-inline pe-3 me-2 me-lg-4 menu-item-button3"
+                                        onclick="menuItemFocus('dinner')"> Dinner
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-6 d-flex justify-content-end">
+                                <button type="button" id="insertMenu" class="btn btn-outline-secondary fs-4  c-orange">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="breakfast" class="container-fluid">
+                            <div class="row">
+                                <% locals.menu.breakFast.forEach((row)=>{ %>
+                                    <div class="col-12 col-sm-6 col-lg-4 position-relative p-0 for-delete">
+                                        <div class="row text-center py-5 px-2 m-3 cards">
+                                            <div class="w-100 d-flex justify-content-center">
+                                                <div id="menuItem" class="col-12 h-100 w-75  position-relative ">
+                                                    <img class="rounded-circle "
+                                                        src="<%= imageBasePath +  row.imageName%>" alt="">
+                                                    <div
+                                                        class="  position-absolute top-100 start-100 translate-middle ">
+                                                        <div class="price rounded-pill c-white fw-bold fs-5 p-2">
+                                                            <%= '$' + row.price%>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 fs-5 h-font h-color fw-bold py-4 px-0 py-2 ">
+                                                <%= row.title%>
+                                            </div>
+                                            <div class="col-12 px-1 description">
+                                                <%= row.description%>
+                                            </div>
+                                        </div>
+                                        <div class="position-absolute top-0 end-0 delete-item  h-color">
+                                            <div class="position-relative delete-item">
+                                                <div class="position-absolute top-0 end-0 delete rounded-circle">
+                                                    <a href="/adminLogin/menu/delete/<%= row.itemId%>" class=" rounded-circle"
+                                                        onclick="return deleteRequest(`<%= row.title%>`)"><i
+                                                            class="fa-solid fa-xmark"></i></a>
+                                                </div>
+                                                <div class="position-absolute bottom-0 end-0 edit rounded-circle">
+                                                    <a href="/adminLogin/menu/insert/<%= row.itemId%>" class="p-3 rounded-circle"
+                                                        onclick="return updateRequest(`<%= row.title%>`)"><i
+                                                            class="fa-solid fa-pen"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% });%>
+                            </div>
+                        </div>
+                        <div id="lunch" class="container-fluid">
+                            <div class="row">
+                                <% locals.menu.lunch.forEach((row)=>{ %>
+                                    <div class="col-12 col-sm-6 col-lg-4 position-relative p-0 for-delete">
+                                        <div class="row text-center py-5 px-2 m-3 cards">
+                                            <div class="w-100 d-flex justify-content-center">
+                                                <div id="menuItem" class="col-12 h-100 w-75  position-relative ">
+                                                    <img class="rounded-circle "
+                                                        src="<%= imageBasePath +  row.imageName%>" alt="">
+                                                    <div
+                                                        class="  position-absolute top-100 start-100 translate-middle ">
+                                                        <div class="price rounded-pill c-white fw-bold fs-5 p-2">
+                                                            <%= '$' + row.price%>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 fs-5 h-font h-color fw-bold py-4 px-0 py-2 ">
+                                                <%= row.title%>
+                                            </div>
+                                            <div class="col-12 px-1 description">
+                                                <%= row.description%>
+                                            </div>
+                                        </div>
+                                        <div class="position-absolute top-0 end-0 delete-item  h-color">
+                                            <div class="position-relative delete-item">
+                                                <div class="position-absolute top-0 end-0 delete rounded-circle">
+                                                    <a href="/adminLogin/menu/delete/<%= row.itemId%>" class=" rounded-circle"
+                                                        onclick="return deleteRequest(`<%= row.title%>`)"><i
+                                                            class="fa-solid fa-xmark"></i></a>
+                                                </div>
+                                                <div class="position-absolute bottom-0 end-0 edit rounded-circle">
+                                                    <a href="/adminLogin/menu/insert/<%= row.itemId%>" class="p-3 rounded-circle"
+                                                        onclick="return updateRequest(`<%= row.title%>`)"><i
+                                                            class="fa-solid fa-pen"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% });%>
+                            </div>
+                        </div>
+                        <div id="dinner" class="container-fluid">
+                            <div class="row">
+                                <% locals.menu.dinner.forEach((row)=>{ %>
+                                    <div class="col-12 col-sm-6 col-lg-4 position-relative p-0 for-delete">
+                                        <div class="row text-center py-5 px-2 m-3 cards">
+                                            <div class="w-100 d-flex justify-content-center">
+                                                <div id="menuItem" class="col-12 h-100 w-75  position-relative ">
+                                                    <img class="rounded-circle "
+                                                        src="<%= imageBasePath +  row.imageName%>" alt="">
+                                                    <div
+                                                        class="  position-absolute top-100 start-100 translate-middle ">
+                                                        <div class="price rounded-pill c-white fw-bold fs-5 p-2">
+                                                            <%= '$' + row.price%>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 fs-5 h-font h-color fw-bold py-4 px-0 py-2 ">
+                                                <%= row.title%>
+                                            </div>
+                                            <div class="col-12 px-1 description">
+                                                <%= row.description%>
+                                            </div>
+                                        </div>
+                                        <div class="position-absolute top-0 end-0 delete-item  h-color">
+                                            <div class="position-relative delete-item">
+                                                <div class="position-absolute top-0 end-0 delete rounded-circle">
+                                                    <a href="/adminLogin/menu/delete/<%= row.itemId%>" class=" rounded-circle"
+                                                        onclick="return deleteRequest(`<%= row.title%>`)"><i
+                                                            class="fa-solid fa-xmark"></i></a>
+                                                </div>
+                                                <div class="position-absolute bottom-0 end-0 edit rounded-circle">
+                                                    <a href="/adminLogin/menu/insert/<%= row.itemId%>" class="p-3 rounded-circle"
+                                                        onclick="return updateRequest(`<%= row.title%>`)"><i
+                                                            class="fa-solid fa-pen"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% });%>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- customer container -->
+                <div id="customer" class="customer col-12 col-md-9">
+                    <div class="h-font h-color fs-40 fw-bold py-3">Customers</div>
+                </div>
             </div>
-            <!-- customer container -->
-            <div id="customer" class="customer col-12 col-md-9">
-                <div class="h-font h-color fs-40 fw-bold py-3">Customers</div>
             </div>
-        </div>
-        </div>
-        <%- include('partials/footer') %>
-            <script src="./../../javascripts/adminView/logOut.js"></script>
-            <script src="./../../javascripts/adminView/mainBody.js"></script>
-            <script>
-                let locals = '<%- locals%>';
-                let data = JSON.parse(locals);
-                document.querySelector("#username").textContent = data.userId;
-                changeFocus(data.focus);
-                console.log(data);
-            </script>
+            <%- include('partials/footer') %>
+                <script src="./../../javascripts/adminView/logOut.js"></script>
+                <script src="./../../javascripts/adminView/mainBody.js"></script>
+                <script>
+                    let data = '<%- locals%>';
+                    document.querySelector("#username").textContent = '<%- locals.userId%>';
+                    changeFocus('<%- locals.focus%>');
+                    menuItemFocus('breakFast');
+                </script>
 
 </body>
 

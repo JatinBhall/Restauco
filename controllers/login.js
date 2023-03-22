@@ -3,24 +3,52 @@ const adminModel = require('../models/adminModel');
 const login = async function (req, res) {
     let userId = req.body.userId;
     let password = req.body.password;
-    let areValid;
+    let areValid = true;
+    let validation = {
+        errMessage: "Invalid Input ☺",
+        userError: "",
+    };
+    let userName;
+
     try {
-        areValid = await adminModel.areValidCredentials(userId, password);
-    } catch (err) {
-        console.log("inside controllers/login.js  arevlidCredentials  " + err);
-    }
-    if (areValid) {
-        let adminData
+        if (userId == null || userId == "") {
+            areValid = false;
+            validation.userError = "Invalid input ☺";
+            throw false;
+        }
+
         try {
-            adminData = await adminModel.read(userId);
+            await adminModel.areValidCredentials(userId, password);
+        } catch (err) {
+            console.log("inside controllers/login.js  arevlidCredentials  " + err);
+            validation.errMessage = "Invalid User ID or Password ☺";
+            areValid = false
+            throw err;
+        }
+    } catch (err) {
+        console.log(err + " first outer");
+    }
+    try {
+        if (!areValid) {
+            console.log('check out');
+            throw false;
+        }
+        try {
+            let result = await adminModel.read(userId);
+            userName = result[0].name
         } catch (err) {
             console.log("inside controllers/login.js  read   " + err);
+            validation.errMessage = "Sorry for delay. Try again ☺";
+            throw err;
         }
-        req.session.userId = userId;
+        req.session.userId = userName;
         res.redirect('/adminLogin/adminView');
-    } else {
-        // req.session.userId = false;
-        res.render('home');
+
+    } catch (err) {
+        console.log(err);
+        validation.userId = userId;
+        let locals = JSON.stringify(validation);
+        res.render('loginForm', { locals: locals });
     }
 };
 

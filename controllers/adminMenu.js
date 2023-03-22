@@ -3,8 +3,19 @@ const menuModel = require('../models/menuModel');
 const rootPath = (path.dirname(process.mainModule.filename));
 const imageRelativePath = rootPath + '/public/images/menu/';
 
-const insert = (req, res) => {
-    res.render('menuInsertEdit', { locals: null });
+const insert = async (req, res) => {
+    if (req.params.userId) {
+        let result;
+        try {
+            result = await menuModel.readMenu(req.params.userId);
+            result.focus = "update"
+        } catch (error) {
+            console.log(error);
+        }
+        res.render('menuInsertEdit', { locals: result });
+    } else {
+        res.render('menuInsertEdit', { locals: null });
+    }
 };
 
 const insertDB = async (req, res) => {
@@ -15,6 +26,7 @@ const insertDB = async (req, res) => {
         category: req.body.category,
         description: req.body.description,
         imagePath: imageRelativePath + image.name,
+        imageName: image.name,
     };
     let validation = {
         success: true,
@@ -79,8 +91,26 @@ const insertDB = async (req, res) => {
 
 };
 
-const update = (req, res) => { console.log('menu update'); };
-const deleteItem = (req, res) => { console.log('menu delete'); };
+const update = async (req, res) => {
+    let locals;
+    try {
+        // locals = await menuModel. 
+    } catch (err) {
+        console.log(err);
+    }
+    res.redirect('')
+};
+
+const deleteItem = async (req, res) => {
+    let result;
+    try {
+        result = await menuModel.deleteItem(req.params.userId);
+    } catch (err) {
+        console.log();
+    }
+    res.redirect('/adminLogin/adminView?focus' + 'menu');
+
+};
 
 module.exports = {
     insert,

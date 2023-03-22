@@ -18,7 +18,7 @@ function read(userId) {
 
 function areValidCredentials(userId, password) {
     return new Promise((resolve, reject) => {
-        let sql = 'select * from `admin` where  userId = ?';
+        let sql = 'select * from `admin` where  `userId` = ?';
         connection.query(sql, userId, (err, result, fields) => {
             if (err) {
                 reject(false);
@@ -26,7 +26,7 @@ function areValidCredentials(userId, password) {
                 resolve(true);
             } else {
                 reject(false);
-            }
+            } 
         });
     });
 

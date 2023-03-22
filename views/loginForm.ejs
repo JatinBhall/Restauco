@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/head') %>
-    <link rel="stylesheet" href="./stylesheets/loginForm.css">
+        <link rel="stylesheet" href="./stylesheets/loginForm.css">
         <title>Login Page</title>
 </head>
 
@@ -15,15 +15,30 @@
         <div class="row d-flex justify-content-center">
             <div class="col-xs-12 col-sm-10 col-md-6 col-lg-4 rounded shadow-lg">
                 <h1 class="text-center h-color h-font py-5">Login as Admin</h1>
-                <form action="/login" method="post">
-                    <input type="text" name="userId" id="userId"  class="form-control rounded-pill shadow-sm my-4 p-2-5" placeholder="Enter User ID">
-                    <input type="password" name="password" id="password" class="form-control rounded-pill shadow-sm my-4 p-2-5" placeholder="Enter Password">
-                    <button type="submit" class="form-control rounded-pill shadow-sm custom-button mt-4 p-2-5">LogIn</button>
-                    <button type="button" class="form-control rounded-pill shadow-sm custom-button mt-2 mb-4 p-2-5">Back</button>
+                <form action="/login" method="post" onsubmit="return formValidation()">
+                    <input type="text" name="userId" id="userId"
+                        class="form-control rounded-pill shadow-sm mt-4 mb-4 p-2-5" placeholder="Enter User ID">
+                    <span class="c-red"></span>
+                    <input type="password" name="password" id="password"
+                        class="form-control rounded-pill shadow-sm mt-4 mb-4 p-2-5" placeholder="Enter Password"
+                        autocomplete="on" required>
+                    <span class="c-red"></span>
+                    <button type="submit"
+                        class="form-control rounded-pill shadow-sm custom-button mt-4 p-2-5">LogIn</button>
+                    <button type="button"
+                        class="form-control rounded-pill shadow-sm custom-button mt-2 mb-4 p-2-5">Back</button>
                 </form>
             </div>
         </div>
     </div>
+    <script src="./javascripts/loginForm/loginForm.js"></script>
+    <script>
+        let validation = `<%- locals%>`;
+        if (validation) {
+            let data = JSON.parse(validation);
+            alert("TRY AGAIN, " + data.errMessage);
+        }
+    </script>
 </body>
 
 </html>

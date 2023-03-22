@@ -12,9 +12,6 @@ const logIn = (req, res, next) => {
 const adminView = async (req, res) => {
     let data = {
         userId: req.session.userId,
-        // menu : { 
-        // data  :'';
-        // },
     };
     data.focus = 'menu';
     if (req.query.focus) {
@@ -29,12 +26,11 @@ const adminView = async (req, res) => {
         console.log(error);
     }
 
-    let locals = JSON.stringify(data);
-    res.render('adminView', { locals: locals });
+    res.render('adminView', { locals: data });
 };
 
 const logOut = (req, res) => {
-    console.log("in side LG");
+    console.log("in side LogOut");
     req.session.destroy();
     res.redirect('/');
 };

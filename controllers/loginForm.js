@@ -1,5 +1,5 @@
 const loginForm = (req, res) => {
-    res.render('loginForm');
+    res.render('loginForm', { locals: null });
 }
 
 module.exports = loginForm;

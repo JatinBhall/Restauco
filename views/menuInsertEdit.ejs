@@ -47,8 +47,7 @@
                         </div>
                         <div class="col-xs-12">
                             <button type="submit"
-                                class="form-control rounded-pill c-white shadow-sm custom-button my-2 p-2-5">Add
-                                Item</button>
+                                class="form-control rounded-pill c-white shadow-sm custom-button my-2 p-2-5">Submit</button>
                         </div>
                         <div class="col-12">
                             <a href="/adminLogin/adminView">
@@ -64,11 +63,15 @@
     </div>
     <script src="./../../javascripts/adminView/menu/menuInsertEdit.js"></script>
     <script>
-        let invalidData = '<%- locals%>';
-        if (invalidData) {
-            let locals = JSON.parse(invalidData);
-            alert(locals.errMessage);
-            serverSideValidation(locals);
+        let data = '<%- locals%>';
+        if (data) {
+            if (data.focus == 'update') {
+
+                serverSideValidation(data);
+            } else {
+                alert(data.errMessage);
+                serverSideValidation(data);
+            }
         }
     </script>
 </body>

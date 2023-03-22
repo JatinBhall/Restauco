@@ -4,9 +4,14 @@
     color: white;
 }
 
-.c-orange{
+.c-red {
+    color: red;
+}
+
+.c-orange {
     color: #fe5f41;
 }
+
 .fs-18 {
     font-size: 18px !important;
 }
@@ -40,16 +45,19 @@
 .p-2-5 {
     padding: 12px !important;
 }
-a:link{
+
+a:link {
     text-decoration: none;
 }
 
-a:visited{
+a:visited {
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
 }
-a:active{
+
+a:active {
     text-decoration: none;
 }
