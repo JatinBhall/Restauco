@@ -18,11 +18,14 @@ const login = require('./routes/login');
 const app = express();
 
 app.use(session({
+  proxy: true,
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
   saveUninitialized: true,
-  cookie: { maxAge: 1000 * 60 * 60 },
+  cookie: {
+    maxAge: 1000 * 60 * 60,
+    domain: ".dreamon.so",
+  },
   resave: false,
-  domain: ".dreamon.so",
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
