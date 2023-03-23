@@ -51,17 +51,17 @@
                         <div class="row d-flex justify-content-between">
                             <div class="col-8 col-md-6 d-flex justify-content-start c-white h-font fs-18 h-color">
                                 <div class="nav-link ">
-                                    <div class="d-inline pe-3 me-2 me-lg-4 menu-item-button1"
+                                    <div class="d-inline px-1 me-2 me-lg-5 menu-item-button1"
                                         onclick="menuItemFocus('breakFast')">
                                         Breakfast</div>
                                 </div>
                                 <div class="nav-link ">
-                                    <div class="d-inline pe-3 me-2 me-lg-4 menu-item-button2"
+                                    <div class="d-inline px-1 me-2 me-lg-5 menu-item-button2"
                                         onclick="menuItemFocus('lunch')"> Lunch
                                     </div>
                                 </div>
                                 <div class="nav-link ">
-                                    <div class="d-inline pe-3 me-2 me-lg-4 menu-item-button3"
+                                    <div class="d-inline px-1 me-2 me-lg-5 menu-item-button3"
                                         onclick="menuItemFocus('dinner')"> Dinner
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div id="breakfast" class="container-fluid">
+                        <div id="breakfast" class="container-fluid pt-3">
                             <div class="row">
                                 <% locals.menu.breakFast.forEach((row)=>{ %>
                                     <div class="col-12 col-sm-6 col-lg-4 position-relative p-0 for-delete">
@@ -99,12 +99,14 @@
                                         <div class="position-absolute top-0 end-0 delete-item  h-color">
                                             <div class="position-relative delete-item">
                                                 <div class="position-absolute top-0 end-0 delete rounded-circle">
-                                                    <a href="/adminLogin/menu/delete/<%= row.itemId%>" class=" rounded-circle"
+                                                    <a href="/adminLogin/menu/delete/<%= row.itemId%>"
+                                                        class=" rounded-circle"
                                                         onclick="return deleteRequest(`<%= row.title%>`)"><i
                                                             class="fa-solid fa-xmark"></i></a>
                                                 </div>
                                                 <div class="position-absolute bottom-0 end-0 edit rounded-circle">
-                                                    <a href="/adminLogin/menu/insert/<%= row.itemId%>" class="p-3 rounded-circle"
+                                                    <a href="/adminLogin/menu/insert/update/<%= row.itemId%>"
+                                                        class="p-3 rounded-circle"
                                                         onclick="return updateRequest(`<%= row.title%>`)"><i
                                                             class="fa-solid fa-pen"></i></a>
                                                 </div>
@@ -114,7 +116,7 @@
                                     <% });%>
                             </div>
                         </div>
-                        <div id="lunch" class="container-fluid">
+                        <div id="lunch" class="container-fluid pt-3">
                             <div class="row">
                                 <% locals.menu.lunch.forEach((row)=>{ %>
                                     <div class="col-12 col-sm-6 col-lg-4 position-relative p-0 for-delete">
@@ -141,12 +143,14 @@
                                         <div class="position-absolute top-0 end-0 delete-item  h-color">
                                             <div class="position-relative delete-item">
                                                 <div class="position-absolute top-0 end-0 delete rounded-circle">
-                                                    <a href="/adminLogin/menu/delete/<%= row.itemId%>" class=" rounded-circle"
+                                                    <a href="/adminLogin/menu/delete/<%= row.itemId%>"
+                                                        class=" rounded-circle"
                                                         onclick="return deleteRequest(`<%= row.title%>`)"><i
                                                             class="fa-solid fa-xmark"></i></a>
                                                 </div>
                                                 <div class="position-absolute bottom-0 end-0 edit rounded-circle">
-                                                    <a href="/adminLogin/menu/insert/<%= row.itemId%>" class="p-3 rounded-circle"
+                                                    <a href="/adminLogin/menu/insert/update/<%= row.itemId%>"
+                                                        class="p-3 rounded-circle"
                                                         onclick="return updateRequest(`<%= row.title%>`)"><i
                                                             class="fa-solid fa-pen"></i></a>
                                                 </div>
@@ -156,7 +160,7 @@
                                     <% });%>
                             </div>
                         </div>
-                        <div id="dinner" class="container-fluid">
+                        <div id="dinner" class="container-fluid pt-3">
                             <div class="row">
                                 <% locals.menu.dinner.forEach((row)=>{ %>
                                     <div class="col-12 col-sm-6 col-lg-4 position-relative p-0 for-delete">
@@ -183,12 +187,14 @@
                                         <div class="position-absolute top-0 end-0 delete-item  h-color">
                                             <div class="position-relative delete-item">
                                                 <div class="position-absolute top-0 end-0 delete rounded-circle">
-                                                    <a href="/adminLogin/menu/delete/<%= row.itemId%>" class=" rounded-circle"
+                                                    <a href="/adminLogin/menu/delete/<%= row.itemId%>"
+                                                        class=" rounded-circle"
                                                         onclick="return deleteRequest(`<%= row.title%>`)"><i
                                                             class="fa-solid fa-xmark"></i></a>
                                                 </div>
                                                 <div class="position-absolute bottom-0 end-0 edit rounded-circle">
-                                                    <a href="/adminLogin/menu/insert/<%= row.itemId%>" class="p-3 rounded-circle"
+                                                    <a href="/adminLogin/menu/insert/update/<%= row.itemId%>"
+                                                        class="p-3 rounded-circle"
                                                         onclick="return updateRequest(`<%= row.title%>`)"><i
                                                             class="fa-solid fa-pen"></i></a>
                                                 </div>
@@ -201,8 +207,39 @@
                     </div>
                 </div>
                 <!-- customer container -->
-                <div id="customer" class="customer col-12 col-md-9">
-                    <div class="h-font h-color fs-40 fw-bold py-3">Customers</div>
+                <div id="customer" class="customer col-12 col-md-10 pt-4 pe-0 pe-md-5">
+                    <div class="container-fluid px-3 pe-5">
+                        <div class="h-font h-color fs-40 fw-bold py-3">Booking Status</div>
+                        <div class="row">
+                            <!-- <div class="col-12 col-sm-6 col-lg-4"></div> -->
+                            <table class="table table-striped text-center customer-data">
+                                <thead>
+                                    <tr class="">
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <th>Date</th>
+                                        <th>Slot</th>
+                                        <th>Table no.</th>
+                                        <th>Message</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    <% locals.bookingStatus.forEach((row)=>{ %>
+                                        <tr>
+                                            <td><%= row.name%></td>
+                                            <td><%= row.phone%></td>
+                                            <td><%= row.expectedDate%></td>
+                                            <td><%= row.expectedSlot%></td>
+                                            <td><%= row.tableNumber%></td>
+                                            <td><%= row.message%></td>
+                                            <td class="delete-booking"><a href="/adminLogin/customer/delete/<%=row.id%>" onclick="return deleteBooking('<%= row.id%>')"><i class="fa-solid fa-trash"></i></a></td>
+                                        </tr>
+                                        <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
             </div>
@@ -210,9 +247,8 @@
                 <script src="./../../javascripts/adminView/logOut.js"></script>
                 <script src="./../../javascripts/adminView/mainBody.js"></script>
                 <script>
-                    let data = '<%- locals%>';
-                    document.querySelector("#username").textContent = '<%- locals.userId%>';
-                    changeFocus('<%- locals.focus%>');
+                    document.querySelector("#username").textContent = '<%= locals.userId%>';
+                    changeFocus('<%= locals.focus%>');
                     menuItemFocus('breakFast');
                 </script>
 

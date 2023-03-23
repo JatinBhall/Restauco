@@ -20,26 +20,91 @@ body {
 }
 
 /* <!-- Menu container --> */
-
-.menu-container {
-    /* background-color: #4c322d; */
+* menu container */
+.nav-link>div:hover {
+    border-bottom: #fe5f41 solid 4px;
 }
 
-.menu-container .custom-button {
-    border-radius: 40px;
-    font-size: large;
+#insertMenu:hover {
+    background-color: #fe5f41;
+    color: white !important;
+}
+
+.menu-button-focus {
+    border-bottom: #fe5f41 solid 4px;
+
+}
+
+.menu-button-focus-off {
+    border-bottom: none;
+
+}
+
+.menu-item-focus {
+    display: block;
+}
+
+.menu-item-focus-off {
+    display: none;
+}
+
+#menu .cards {
+    border: #d1c9c8 solid 1px;
+    border-radius: 10px;
+}
+
+#menu .cards:hover {
+    border: #f1edec00 solid 1px;
+    border-radius: 0;
+    box-shadow: 1px 1px 20px #f1edec9d;
+}
+
+#menu #menuItem img {
+    width: 150px;
+    height: 150px;
+}
+
+#menu .price {
     background-color: #fe5f41;
 }
 
-.menu-container .custom-button:hover {
+#menu .description {
+    min-height: 100px;
+    overflow: hidden;
+}
+
+#menu .delete-item {
+
+    height: 80px;
+    width: 50px;
+}
+#menu .delete-item .edit a{
+    padding: 16px;
+}
+#menu .delete-item .delete a{
+    padding: 16px 19px;
+    /* height: 60px; */
+    /* width: 60px; */
+}
+
+.for-delete:hover .delete-item a{
+    background-color: #fe5f41;
+}
+
+#menu .delete-item a:link {
+    color: white;
+}
+
+#menu .delete-item a:visited {
+
+    color: white;
+}
+
+#menu .delete-item a:hover {
+    color: white;
     background-color: #e74929;
-    /* text-decoration: underline; */
 }
 
-.menu-container .nav-link {
-    margin-right: 100px;
-}
-
-.menu-container .nav-link>div:hover {
-    border-bottom: #fe5f41 solid 4px;
+#menu .delete-item a:active {
+    color: white;
 }

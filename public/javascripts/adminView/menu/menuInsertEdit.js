@@ -5,6 +5,7 @@ let image = document.querySelector(' form #image');
 let description = document.querySelector(' form #description');
 
 function formValidation() {
+    return true;
     let success = true;
     if ((title.value == null) || (title.value == "")) {
         success = false;
@@ -40,13 +41,19 @@ function formValidation() {
 }
 
 function serverSideValidation(data) {
-    title.value=data.menuItem.title;
-    price.value=data.menuItem.price;
-    category.value=data.menuItem.category;
-    description.value=data.menuItem.description;
+    title.value = data.menuItem.title;
+    price.value = data.menuItem.price;
+    category.value = data.menuItem.category;
+    description.value = data.menuItem.description;
 
     title.nextElementSibling.textContent = data.title.errMessage;
     price.nextElementSibling.textContent = data.price.errMessage;
     image.nextElementSibling.textContent = data.image.errMessage;
 
+}
+function showData(data) {
+    title.value = data.title;
+    price.value = data.price;
+    category.value = data.category;
+    description.value = data.description;
 }

@@ -1,4 +1,5 @@
 const menuModel = require('../models/menuModel');
+const reservationModel = require('../models/reservationModel');
 
 const logIn = (req, res, next) => {
     let session = req.session;
@@ -14,14 +15,19 @@ const adminView = async (req, res) => {
         userId: req.session.userId,
     };
     data.focus = 'menu';
-    if (req.query.focus) {
-        data.focus = req.query.focus;
+    if (req.session.focus == 'customer') {
+        data.focus = 'customer';
     }
 
     try {
         data.menu = { breakFast: await menuModel.readCategory('Breakfast') };
         data.menu.lunch = await menuModel.readCategory('Lunch');
         data.menu.dinner = await menuModel.readCategory('Dinner');
+        data.bookingStatus = await reservationModel.bookingStatus();
+        for (let i = 0; i < data.bookingStatus.length; i++) {
+            let str = String(data.bookingStatus[i].expectedDate);
+            data.bookingStatus[i].expectedDate = str.slice(0, 15);
+        }
     } catch (error) {
         console.log(error);
     }

@@ -133,3 +133,16 @@ body {
 #menu .delete-item a:active {
     color: white;
 }
+
+#customer .customer-data .delete-booking a:link{
+    color: #fe5f41;
+}
+#customer .customer-data .delete-booking a:visited{
+    color: #fe5f41;
+}
+#customer .customer-data .delete-booking a:hover{
+    color: #e74929;
+}
+#customer .customer-data .delete-booking a:active{
+    color: #fe5f41;
+}

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/head') %>
-        <link rel="stylesheet" href="./../../stylesheets/adminView/menu/menuInsertEdit.css">
+        <link rel="stylesheet" href="./../../../../stylesheets/adminView/menu/menuInsertEdit.css">
         <title>menuItemEdit</title>
 </head>
 
@@ -14,8 +14,8 @@
     <div class="container py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-xs-12 col-sm-10 col-md-8 col-lg-4 rounded shadow-lg">
-                <h1 class="text-center h-color h-font pt-5">Insert New Item</h1>
-                <form action="/adminLogin/menu/insertDB" method="post" onsubmit="return formValidation()"
+                <h1 id="form-heading" class="text-center h-color h-font pt-5">Insert New Item</h1>
+                <form action="/adminLogin/menu/insertDB/0" method="post" onsubmit="return formValidation()"
                     enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-xs-12">
@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-xs-12 ">
                             <input type="file" name="image" id="image"
-                                class="form-control rounded-pill shadow-sm my-2 p-2-5" placeholder="Title" required>
+                                class="form-control rounded-pill shadow-sm my-2 p-2-5" required>
                             <span></span>
                         </div>
                         <div class="col-xs-12 ">
@@ -46,8 +46,9 @@
                                 class="form-control rounded my-1 p-2-5" placeholder="description"></textarea>
                         </div>
                         <div class="col-xs-12">
-                            <button type="submit"
-                                class="form-control rounded-pill c-white shadow-sm custom-button my-2 p-2-5">Submit</button>
+                            <button type="submit" id="submit-button"
+                                class="form-control rounded-pill c-white shadow-sm custom-button my-2 p-2-5">Add
+                                Item</button>
                         </div>
                         <div class="col-12">
                             <a href="/adminLogin/adminView">
@@ -61,16 +62,26 @@
             </div>
         </div>
     </div>
-    <script src="./../../javascripts/adminView/menu/menuInsertEdit.js"></script>
+    <script src="./../../../../javascripts/adminView/menu/menuInsertEdit.js"></script>
     <script>
-        let data = '<%- locals%>';
-        if (data) {
-            if (data.focus == 'update') {
-
+        let data = '<%- JSON.stringify(locals)%>';
+        data = JSON.parse(data);
+        if (data.focus == 'insert') {
+            if (data.success == false) {
+                console.log(1);
                 serverSideValidation(data);
-            } else {
+                console.log(2);
                 alert(data.errMessage);
+            }
+        } else {
+            document.querySelector("#submit-button").textContent = "Updata Item";
+            document.querySelector("form").action = "/adminLogin/menu/updateDB/<%=locals.userId%>";
+            document.querySelector("#form-heading").textContent = "Update Menu Item";
+            if (data.display == 'data') {
+                showData(data.itemData[0]);
+            } else {
                 serverSideValidation(data);
+                alert(data.errMessage);
             }
         }
     </script>

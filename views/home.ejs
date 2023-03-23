@@ -212,7 +212,8 @@
 </body>
 <script src="./javascripts/home/reservation.js"></script>
 <script>
-    let invalidData = '<%- locals%>';
+    let invalidData = '<%- JSON.stringify(locals)%>';
+    invalidData = JSON.parse(invalidData);
     if (invalidData) {
         let locals = JSON.parse(invalidData);
         alert(locals.errMessage);

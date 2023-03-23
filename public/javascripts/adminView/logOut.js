@@ -1,5 +1,5 @@
 insertMenu.onclick = function () {
-    window.location.href = "/adminLogin/menu/insert";
+    window.location.href = "/adminLogin/menu/insert/insert/0";
 }
 let logOut = document.querySelector('#log-out');
 logOut.textContent = 'Log Out';

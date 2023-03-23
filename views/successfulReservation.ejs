@@ -44,7 +44,10 @@
         <%- include('partials/footer') %>
 
             <script>
-                let data = JSON.parse('<%- customerData %>');
+                let data = '<%- JSON.stringify(customerData)%>';
+                data = JSON.parse(data);
+                console.log(data);
+                console.log(data.name);
                 document.querySelector('.customer-data h2').textContent = `Hello ${data.name}`;
                 document.querySelector('.customer-data p').innerHTML = `Your reservation is complete at Restauco on <strong>${data.date}</strong> for ${data.category}. You booked table number
                 <strong>${data.tables.toString()}</strong>.`;

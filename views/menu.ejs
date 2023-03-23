@@ -12,55 +12,138 @@
 
 <body>
     <%- include('partials/header') %>
-        <!-- "title" container -->
-        <div class="container-fluid header pt-5 p-lg-0 h-font h-color">
-            <div class="row pt-5 pt-lg-0">
-                <div class="col-xs-12 col-lg-6 d-flex align-items-stretch ps-2 ps-lg-5">
-                    <div class="d-flex align-items-center px-5">
-                        <div class="row pt-5 pt-lg-0">
-                            <div class="col-12 fs-1 fw-bold pt-5 pt-lg-0">
-                                Food Menu
-                            </div>
-                            <div class="col-12 fs-5 my-4">
-                                Making a reservation at Délicious restaurant is easy and takes just a couple of minutes.
+        <% let imageBasePath='./../../images/menu/' %>
+            <!-- "title" container -->
+            <div class="container-fluid header pt-5 p-lg-0 h-font h-color">
+                <div class="row pt-5 pt-lg-0">
+                    <div class="col-xs-12 col-lg-6 d-flex align-items-stretch ps-2 ps-lg-5">
+                        <div class="d-flex align-items-center px-5">
+                            <div class="row pt-5 pt-lg-0">
+                                <div class="col-12 fs-1 fw-bold pt-5 pt-lg-0">
+                                    Food Menu
+                                </div>
+                                <div class="col-12 fs-5 my-4">
+                                    Making a reservation at Délicious restaurant is easy and takes just a couple of
+                                    minutes.
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="d-none d-lg-block col-lg-6">
-                    <img class="img-fluid" src="./images/home/h1_hero1.jpg" alt="">
+                    <div class="d-none d-lg-block col-lg-6">
+                        <img class="img-fluid" src="./images/home/h1_hero1.jpg" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Menu container -->
-        <div id="menu-container" class="container-fluid menu-container">
-            <div class="container py-10 px-5">
-                <div class="row">
-                    <div class="col-xs-12">
+            <!-- Menu container -->
+            <div id="menu" class="menu col-12  pt-4  px-5">
+                <div class="container-fluid px-3">
+                    <div class="h-font h-color fs-40 fw-bold py-3">Food Menu</div>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-8 col-md-6 d-flex justify-content-start c-white h-font fs-18 h-color">
+                            <div class="nav-link ">
+                                <div class="d-inline p1-3 me-2 me-lg-5 menu-item-button1 text-center"
+                                    onclick="menuItemFocus('breakFast')">
+                                    Breakfast</div>
+                            </div>
+                            <div class="nav-link ">
+                                <div class="d-inline p1-3 me-2 me-lg-5 menu-item-button2 text-center"
+                                    onclick="menuItemFocus('lunch')">
+                                    Lunch
+                                </div>
+                            </div>
+                            <div class="nav-link ">
+                                <div class="d-inline p1-3 me-2 me-lg-5 menu-item-button3 text-center"
+                                    onclick="menuItemFocus('dinner')">
+                                    Dinner
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="breakfast" class="container-fluid pt-3">
                         <div class="row">
-                            <div class="col-12 h-font fw-bold fs-40 h-color">
-                                Most Popular Dishes
-                            </div>
-                            <div class="col-12 fs-18 py-4">
-                                Making a reservation at Délicious restaurant is easy and takes just a couple of minutes.
-                            </div>
+                            <% locals.menu.breakFast.forEach((row)=>{ %>
+                                <div class="col-12 col-sm-6 col-lg-4 position-relative p-0 for-delete">
+                                    <div class="row text-center py-5 px-2 m-3 cards">
+                                        <div class="w-100 d-flex justify-content-center">
+                                            <div id="menuItem" class="col-12 h-100 w-75  position-relative ">
+                                                <img class="rounded-circle " src="<%= imageBasePath +  row.imageName%>"
+                                                    alt="">
+                                                <div class="  position-absolute top-100 start-100 translate-middle ">
+                                                    <div class="price rounded-pill c-white fw-bold fs-5 p-2">
+                                                        <%= '$' + row.price%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 fs-5 h-font h-color fw-bold py-4 px-0 py-2 ">
+                                            <%= row.title%>
+                                        </div>
+                                        <div class="col-12 px-1 description">
+                                            <%= row.description%>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% });%>
+                        </div>
+                    </div>
+                    <div id="lunch" class="container-fluid pt-3">
+                        <div class="row">
+                            <% locals.menu.lunch.forEach((row)=>{ %>
+                                <div class="col-12 col-sm-6 col-lg-4 position-relative p-0 for-delete">
+                                    <div class="row text-center py-5 px-2 m-3 cards">
+                                        <div class="w-100 d-flex justify-content-center">
+                                            <div id="menuItem" class="col-12 h-100 w-75  position-relative ">
+                                                <img class="rounded-circle " src="<%= imageBasePath +  row.imageName%>"
+                                                    alt="">
+                                                <div class="  position-absolute top-100 start-100 translate-middle ">
+                                                    <div class="price rounded-pill c-white fw-bold fs-5 p-2">
+                                                        <%= '$' + row.price%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 fs-5 h-font h-color fw-bold py-4 px-0 py-2 ">
+                                            <%= row.title%>
+                                        </div>
+                                        <div class="col-12 px-1 description">
+                                            <%= row.description%>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% });%>
+                        </div>
+                    </div>
+                    <div id="dinner" class="container-fluid pt-3">
+                        <div class="row">
+                            <% locals.menu.dinner.forEach((row)=>{ %>
+                                <div class="col-12 col-sm-6 col-lg-4 position-relative p-0 for-delete">
+                                    <div class="row text-center py-5 px-2 m-3 cards">
+                                        <div class="w-100 d-flex justify-content-center">
+                                            <div id="menuItem" class="col-12 h-100 w-75  position-relative ">
+                                                <img class="rounded-circle " src="<%= imageBasePath +  row.imageName%>"
+                                                    alt="">
+                                                <div class="  position-absolute top-100 start-100 translate-middle ">
+                                                    <div class="price rounded-pill c-white fw-bold fs-5 p-2">
+                                                        <%= '$' + row.price%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 fs-5 h-font h-color fw-bold py-4 px-0 py-2 ">
+                                            <%= row.title%>
+                                        </div>
+                                        <div class="col-12 px-1 description">
+                                            <%= row.description%>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% });%>
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-start  h-font fs-18 ">
-                    <div class="nav-link ">
-                        <div class="d-inline p-2"> Breakfast</div>
-                    </div>
-                    <div class="nav-link ">
-                        <div class="d-inline p-2"> Lunch</div>
-                    </div>
-                    <div class="nav-link ">
-                        <div class="d-inline p-2"> Dinner</div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <%- include('partials/footer') %>
+            <%- include('partials/footer') %>
+            <script src="./javascripts/menu.js"></script>
 </body>
 
 </html>

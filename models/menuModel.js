@@ -10,7 +10,7 @@ function insert(menuItem) {
                 reject("false");
             }
             // console.log("insert pass");
-            resolve(true);
+            resolve(result);
         });
     })
 };

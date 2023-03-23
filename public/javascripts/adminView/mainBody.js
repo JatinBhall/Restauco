@@ -20,6 +20,10 @@ function updateRequest(item) {
     return confirm(`Do you want to EDIT "${item}" from the Menu.`);
 }
 
+function deleteBooking(id) {
+    return confirm(`Press OK to cancle the booking`);
+}
+
 function menuItemFocus(focus){
     let breakFast = document.querySelector("#breakfast");
     let lunch = document.querySelector("#lunch");

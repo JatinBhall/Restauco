@@ -101,9 +101,8 @@ const reservationView = async (req, res) => {
                 console.log(err);
                 throw err;
             }
-            let customerData = JSON.stringify(data);
             email.reservationMail(data);
-            res.render('successfulReservation', { customerData: customerData });
+            res.render('successfulReservation', { customerData: data });
             return;
         } catch (err) {
             console.log(err);
