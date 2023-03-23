@@ -18,7 +18,6 @@ const login = require('./routes/login');
 const app = express();
 
 app.use(session({
-  proxy: true,
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
   saveUninitialized: true,
   cookie: {
