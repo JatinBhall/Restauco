@@ -13,204 +13,322 @@
 <body>
     <!-- navbar (header) -->
     <%- include('partials/header') %>
-        <!-- "title" container -->
-        <div class="container-fluid header pt-5 p-lg-0 h-font h-color">
-            <div class="row pt-5 pt-lg-0">
-                <div class="col-xs-12 col-lg-6 d-flex align-items-stretch ps-2 ps-lg-5">
-                    <div class="d-flex align-items-center px-5">
-                        <div class="row pt-5 pt-lg-0">
-                            <div class="col-12 fs-1 fw-bold pt-5 pt-lg-0">
-                                Meet, Eat & Enjoy the true taste
-                            </div>
-                            <div class="col-12 fs-5 my-4">
-                                Making a reservation at Délicious restaurant is easy and takes just a couple of minutes.
-                            </div>
-                            <div class="col-12 ">
-                                <a href="#menu-container"><button type="button"
-                                        class="btn btn-danger custom-button py-2 px-3 py-lg-3 px-lg-5 my-4 ">Our
-                                        Menu</button>
-                                </a>
+        <% let imageBasePath='./../../images/menu/' %>
+            <!-- "title" container -->
+            <div class="container-fluid header pt-5 p-lg-0 h-font h-color">
+                <div class="row pt-5 pt-lg-0">
+                    <div class="col-xs-12 col-lg-6 d-flex align-items-stretch ps-2 ps-lg-5">
+                        <div class="d-flex align-items-center px-5">
+                            <div class="row pt-5 pt-lg-0">
+                                <div class="col-12 fs-1 fw-bold pt-5 pt-lg-0">
+                                    Meet, Eat & Enjoy the true taste
+                                </div>
+                                <div class="col-12 fs-5 my-4">
+                                    Making a reservation at Délicious restaurant is easy and takes just a couple of
+                                    minutes.
+                                </div>
+                                <div class="col-12 ">
+                                    <a href="#menu-container"><button type="button"
+                                            class="btn btn-danger custom-button py-2 px-3 py-lg-3 px-lg-5 my-4 ">Our
+                                            Menu</button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="d-none d-lg-block col-lg-6">
-                    <img class="img-fluid" src="./images/home/h1_hero1.jpg" alt="">
-                </div>
-            </div>
-        </div>
-        <!-- "Best way to eat healthy food" container -->
-        <div class="container py-10  healthy-meal">
-            <div class="row d-flex justify-content-center text-center">
-                <div class="col-md-11 col-lg-8 col-xl-7 fs-40 fw-bold h-font h-color d-flex justify-content-center">
-                    Best way to eat healthy food
-                </div>
-                <div class="col-md-11 col-lg-8 col-xl-7 fs-18 p-3 d-flex justify-content-center">
-                    Making a reservation at Délicious restaurant is easy and takes just a
-                    couple of minutes.
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-lg-4">
-                    <div class="row text-center p-5 m-2 cards">
-                        <div class="col-12">
-                            <i class="fa-solid fa-wheat-awn"></i>
-                        </div>
-                        <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
-                            Healthy Meal
-                        </div>
-                        <div class="col-12 px-3">
-                            Making a reservation at Délicious restaurant is easy and takes just a
-                            couple of minutes.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-4">
-                    <div class="row text-center p-5 m-2 cards">
-                        <div class="col-12">
-                            <i class="fa-solid fa-burger"></i>
-                        </div>
-                        <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
-                            Fast Food
-                        </div>
-                        <div class="col-12 px-3">
-                            Making a reservation at Délicious restaurant is easy and takes just a
-                            couple of minutes.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-4">
-                    <div class="row text-center p-5 m-2 cards">
-                        <div class="col-12">
-                            <i class="fa-solid fa-mug-hot"></i>
-                        </div>
-                        <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
-                            Delicious Coffee
-                        </div>
-                        <div class="col-12 px-3">
-                            Making a reservation at Délicious restaurant is easy and takes just a
-                            couple of minutes.
-                        </div>
+                    <div class="d-none d-lg-block col-lg-6">
+                        <img class="img-fluid" src="./images/home/h1_hero1.jpg" alt="">
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Menu container -->
-        <div id="menu-container" class="container-fluid menu-container">
-            <div class="container py-10 px-5">
+            <!-- "Best way to eat healthy food" container -->
+            <div class="container py-10  healthy-meal">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-md-11 col-lg-8 col-xl-7 fs-40 fw-bold h-font h-color d-flex justify-content-center">
+                        Best way to eat healthy food
+                    </div>
+                    <div class="col-md-11 col-lg-8 col-xl-7 fs-18 p-3 d-flex justify-content-center">
+                        Making a reservation at Délicious restaurant is easy and takes just a
+                        couple of minutes.
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-8 col-md-6">
-                        <div class="row">
-                            <div class="col-12 h-font fw-bold fs-40 c-white">
-                                Most Popular Dishes
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="row text-center p-5 m-2 cards">
+                            <div class="col-12">
+                                <i class="fa-solid fa-wheat-awn"></i>
                             </div>
-                            <div class="col-12 fs-18 py-4">
-                                Making a reservation at Délicious restaurant is easy and takes just a couple of minutes.
+                            <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
+                                Healthy Meal
+                            </div>
+                            <div class="col-12 px-3">
+                                Making a reservation at Délicious restaurant is easy and takes just a
+                                couple of minutes.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="row text-center p-5 m-2 cards">
+                            <div class="col-12">
+                                <i class="fa-solid fa-burger"></i>
+                            </div>
+                            <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
+                                Fast Food
+                            </div>
+                            <div class="col-12 px-3">
+                                Making a reservation at Délicious restaurant is easy and takes just a
+                                couple of minutes.
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-6 d-flex justify-content-end align-items-start">
-                        <a href="/menu"><button type="button"
-                                class="btn btn-danger custom-button py-2 px-3 py-lg-3 px-lg-5 my-4 h-font">Full
-                                Menu</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-start c-white h-font fs-18 ">
-                    <div class="nav-link ">
-                        <div class="d-inline p-2"> Breakfast</div>
-                    </div>
-                    <div class="nav-link ">
-                        <div class="d-inline p-2"> Lunch</div>
-                    </div>
-                    <div class="nav-link ">
-                        <div class="d-inline p-2"> Dinner</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- reservation container -->
-        <div tabindex="0" id="reserve-container" class="container py-10 px-5 reserve-container">
-            <div class="row d-flex justify-content-between align-items-center">
-                <div class="col-md-12 col-lg-7">
-                    <img class="img-fluid" src="./images/home/woner.jpg" alt="">
-                </div>
-                <div class="col-md-12 col-lg-4">
-                    <!-- reservation form -->
-                    <form action="/reservation" method="post" onsubmit="return formValidation()">
-                        <div class="row pt-5 pt-lg-0">
-                            <div class="col-12 h-color h-font fs-40 fw-bold ">Book a table</div>
-                            <div class="col-12 py-3">
-                                Making a reservation at Délicious restaurant is easy
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="row text-center p-5 m-2 cards">
+                            <div class="col-12">
+                                <i class="fa-solid fa-mug-hot"></i>
                             </div>
-                            <div class="col-xs-12 ">
-                                <input type="text" name="name" id="name" class="form-control rounded-pill my-2 p-2-5"
-                                    placeholder="Enter your Name" required>
-                                <span></span>
+                            <div class="col-12 fs-3 h-font h-color fw-bold py-4 px-0">
+                                Delicious Coffee
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
-                                <input type="text" name="numberOfGuest" id="numberOfGuest"
-                                    class="form-control rounded-pill my-2 p-2-5" placeholder="Number Of Guest" required>
-                                <span></span>
-                            </div>
-                            <div class="col-xs-12 col-sm-6">
-                                <input type="text" name="date" id="date" class="form-control rounded-pill my-2 p-2-5"
-                                    placeholder="Date" onblur="(this.type = 'text')" onfocus="(this.type = 'date')"
-                                    required>
-                            </div>
-                            <div class="col-xs-12 col-sm-6">
-                                <select name="category" id="category" class="form-control rounded-pill my-2 p-2-5"
-                                    required>
-                                    <option value="Breakfast">Breakfast</option>
-                                    <option value="Lunch" selected>Lunch</option>
-                                    <option value="Dinner">Dinner</option>
-                                </select>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
-                                <input type="tel" name="phone" id="phone" class="form-control rounded-pill my-2 p-2-5"
-                                    placeholder="Phone No." required>
-                                <span></span>
-                            </div>
-                            <div class="col-xs-12 col-lg-12">
-                                <input type="email" name="email" id="email" class="form-control rounded-pill my-2 p-2-5"
-                                    placeholder="Email" required>
-                                <span></span>
-                            </div>
-                            <div class="col-xs-12 col-lg-12">
-                                <textarea name="message" id="message" rows="3" class="form-control rounded my-2 p-2-5"
-                                    placeholder="Message"></textarea>
-                            </div>
-                            <div class="col-xs-12 col-lg-12">
-                                <button class="button btn btn-danger rounded-pill custom-button w-100 my-2 p-2-5">Sent
-                                    Request</button>
+                            <div class="col-12 px-3">
+                                Making a reservation at Délicious restaurant is easy and takes just a
+                                couple of minutes.
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- photo gellary container -->
-        <div class="container-fluid p-0">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
-                    <img class="img-fluid" src="./images/home/instra1.jpg" alt="">
-                </div>
-                <div class="d-none d-sm-block col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
-                    <img class="img-fluid" src="./images/home/instra2.jpg" alt="">
-                </div>
-                <div class="d-none d-md-block col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
-                    <img class="img-fluid" src="./images/home/instra3.jpg" alt="">
-                </div>
-                <div class="d-none d-lg-block col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
-                    <img class="img-fluid" src="./images/home/instra4.jpg" alt="">
+            <!-- Menu container -->
+            <div id="menu-container" class="container-fluid menu-container">
+                <div class="container py-10 px-5">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-6">
+                            <div class="row">
+                                <div class="col-12 h-font fw-bold fs-40 c-white">
+                                    Most Popular Dishes
+                                </div>
+                                <div class="col-12 fs-18 py-4">
+                                    Making a reservation at Délicious restaurant is easy and takes just a couple of
+                                    minutes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-6 d-flex justify-content-end align-items-start">
+                            <a href="/menu"><button type="button"
+                                    class="btn btn-danger custom-button py-2 px-3 py-lg-3 px-lg-5 my-4 h-font">Full
+                                    Menu</button>
+                            </a>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div id="menu" class="menu col-12">
+                        <% let count=1 %>
+                            <div class="container-fluid px-3">
+                                <div class="row d-flex justify-content-between">
+                                    <div
+                                        class="col-8 col-md-6 d-flex justify-content-start  h-font fs-18 h-color">
+                                        <div class="nav-link ">
+                                            <div class="d-inline p1-3 me-2 me-lg-5 menu-item-button1 text-center c-white"
+                                                onclick="menuItemFocus('breakFast')">
+                                                Breakfast</div>
+                                        </div>
+                                        <div class="nav-link ">
+                                            <div class="d-inline p1-3 me-2 me-lg-5 menu-item-button2 text-center c-white"
+                                                onclick="menuItemFocus('lunch')">
+                                                Lunch
+                                            </div>
+                                        </div>
+                                        <div class="nav-link ">
+                                            <div class="d-inline p1-3 me-2 me-lg-5 menu-item-button3 text-center c-white"
+                                                onclick="menuItemFocus('dinner')">
+                                                Dinner
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="breakfast" class="container-fluid pt-3">
+                                    <div class="row">
+                                        <% for(let row of locals.menu.breakFast ){ count = count+1; %>
+                                            <div class="col-12 col-md-6 col-lg-4 position-relative p-0 for-delete ">
+                                                <div class="row text-center py-5 px-2 m-3 cards">
+                                                    <div class="w-100 d-flex justify-content-center">
+                                                        <div id="menuItem"
+                                                            class="col-12 h-100 w-75  position-relative ">
+                                                            <img class="rounded-circle "
+                                                                src="<%= imageBasePath +  row.imageName%>" alt="">
+                                                            <div
+                                                                class="  position-absolute top-100 start-100 translate-middle ">
+                                                                <div
+                                                                    class="price rounded-pill c-white fw-bold fs-5 p-2">
+                                                                    <%= '$' + row.price%>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 fs-5 h-font h-color fw-bold py-4 px-0 py-2 ">
+                                                        <%= row.title%>
+                                                    </div>
+                                                    <div class="col-12 px-1 description">
+                                                        <%= row.description%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% if(count> 3) { count = 1; break;} %>
+                                                <% }%>
+                                    </div>
+                                </div>
+                                <div id="lunch" class="container-fluid pt-3">
+                                    <div class="row">
+                                        <% for(let row of locals.menu.lunch ){ count = count+1; %>
+                                            <div class="col-12 col-md-6 col-lg-4 position-relative p-0 for-delete">
+                                                <div class="row text-center py-5 px-2 m-3 cards">
+                                                    <div class="w-100 d-flex justify-content-center">
+                                                        <div id="menuItem"
+                                                            class="col-12 h-100 w-75  position-relative ">
+                                                            <img class="rounded-circle "
+                                                                src="<%= imageBasePath +  row.imageName%>" alt="">
+                                                            <div
+                                                                class="  position-absolute top-100 start-100 translate-middle ">
+                                                                <div
+                                                                    class="price rounded-pill c-white fw-bold fs-5 p-2">
+                                                                    <%= '$' + row.price%>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 fs-5 h-font h-color fw-bold py-4 px-0 py-2 ">
+                                                        <%= row.title%>
+                                                    </div>
+                                                    <div class="col-12 px-1 description">
+                                                        <%= row.description%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% if(count> 3) { count = 1; break;} %>
+                                                <% }%>
+                                    </div>
+                                </div>
+                                <div id="dinner" class="container-fluid pt-3">
+                                    <div class="row">
+                                        <% for(let row of locals.menu.breakFast ){ count = count+1; %>
+                                            <div class="col-12 col-md-6 col-lg-4 position-relative p-0 for-delete">
+                                                <div class="row text-center py-5 px-2 m-3 cards">
+                                                    <div class="w-100 d-flex justify-content-center">
+                                                        <div id="menuItem"
+                                                            class="col-12 h-100 w-75  position-relative ">
+                                                            <img class="rounded-circle "
+                                                                src="<%= imageBasePath +  row.imageName%>" alt="">
+                                                            <div
+                                                                class="  position-absolute top-100 start-100 translate-middle ">
+                                                                <div
+                                                                    class="price rounded-pill c-white fw-bold fs-5 p-2">
+                                                                    <%= '$' + row.price%>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 fs-5 h-font h-color fw-bold py-4 px-0 py-2 ">
+                                                        <%= row.title%>
+                                                    </div>
+                                                    <div class="col-12 px-1 description">
+                                                        <%= row.description%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% if(count> 3) { count = 1; break;} %>
+                                                <% }%>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <!--  -->
                 </div>
             </div>
-        </div>
-        <!-- footer -->
-        <%- include('partials/footer') %>
+            <!-- reservation container -->
+            <div tabindex="0" id="reserve-container" class="container py-10 px-5 reserve-container">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-md-12 col-lg-7">
+                        <img class="img-fluid" src="./images/home/woner.jpg" alt="">
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <!-- reservation form -->
+                        <form action="/reservation" method="post" onsubmit="return formValidation()">
+                            <div class="row pt-5 pt-lg-0">
+                                <div class="col-12 h-color h-font fs-40 fw-bold ">Book a table</div>
+                                <div class="col-12 py-3">
+                                    Making a reservation at Délicious restaurant is easy
+                                </div>
+                                <div class="col-xs-12 ">
+                                    <input type="text" name="name" id="name"
+                                        class="form-control rounded-pill my-2 p-2-5" placeholder="Enter your Name"
+                                        required>
+                                    <span></span>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+                                    <input type="text" name="numberOfGuest" id="numberOfGuest"
+                                        class="form-control rounded-pill my-2 p-2-5" placeholder="Number Of Guest"
+                                        required>
+                                    <span></span>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <input type="text" name="date" id="date"
+                                        class="form-control rounded-pill my-2 p-2-5" placeholder="Date"
+                                        onblur="(this.type = 'text')" onfocus="(this.type = 'date')" required>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <select name="category" id="category" class="form-control rounded-pill my-2 p-2-5"
+                                        required>
+                                        <option value="Breakfast">Breakfast</option>
+                                        <option value="Lunch" selected>Lunch</option>
+                                        <option value="Dinner">Dinner</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+                                    <input type="tel" name="phone" id="phone"
+                                        class="form-control rounded-pill my-2 p-2-5" placeholder="Phone No." required>
+                                    <span></span>
+                                </div>
+                                <div class="col-xs-12 col-lg-12">
+                                    <input type="email" name="email" id="email"
+                                        class="form-control rounded-pill my-2 p-2-5" placeholder="Email" required>
+                                    <span></span>
+                                </div>
+                                <div class="col-xs-12 col-lg-12">
+                                    <textarea name="message" id="message" rows="3"
+                                        class="form-control rounded my-2 p-2-5" placeholder="Message"></textarea>
+                                </div>
+                                <div class="col-xs-12 col-lg-12">
+                                    <button
+                                        class="button btn btn-danger rounded-pill custom-button w-100 my-2 p-2-5">Sent
+                                        Request</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- photo gellary container -->
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
+                        <img class="img-fluid" src="./images/home/instra1.jpg" alt="">
+                    </div>
+                    <div class="d-none d-sm-block col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
+                        <img class="img-fluid" src="./images/home/instra2.jpg" alt="">
+                    </div>
+                    <div class="d-none d-md-block col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
+                        <img class="img-fluid" src="./images/home/instra3.jpg" alt="">
+                    </div>
+                    <div class="d-none d-lg-block col-xs-12 col-sm-6 col-md-4 col-lg-3 p-0">
+                        <img class="img-fluid" src="./images/home/instra4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <%- include('partials/footer') %>
 
 </body>
 <script src="./javascripts/home/reservation.js"></script>
+<script src="./javascripts/home/menu.js"></script>
 <script>
     let invalidData = '<%- JSON.stringify(locals)%>';
     invalidData = JSON.parse(invalidData);

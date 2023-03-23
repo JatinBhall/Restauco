@@ -210,35 +210,47 @@
                 <div id="customer" class="customer col-12 col-md-10 pt-4 pe-0 pe-md-5">
                     <div class="container-fluid px-3 pe-5">
                         <div class="h-font h-color fs-40 fw-bold py-3">Booking Status</div>
-                        <div class="row">
+                        <!-- <div class="row"> -->
+                        <div class="table-responsive">
                             <!-- <div class="col-12 col-sm-6 col-lg-4"></div> -->
-                            <table class="table table-striped text-center customer-data">
+                            <table class="table text-center customer-data">
                                 <thead>
-                                    <tr class="">
+                                    <tr>
                                         <th>Name</th>
                                         <th>Phone</th>
                                         <th>Date</th>
                                         <th>Slot</th>
                                         <th>Table no.</th>
-                                        <th>Message</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody >
+                                <tbody>
                                     <% locals.bookingStatus.forEach((row)=>{ %>
                                         <tr>
-                                            <td><%= row.name%></td>
-                                            <td><%= row.phone%></td>
-                                            <td><%= row.expectedDate%></td>
-                                            <td><%= row.expectedSlot%></td>
-                                            <td><%= row.tableNumber%></td>
-                                            <td><%= row.message%></td>
-                                            <td class="delete-booking"><a href="/adminLogin/customer/delete/<%=row.id%>" onclick="return deleteBooking('<%= row.id%>')"><i class="fa-solid fa-trash"></i></a></td>
+                                            <td>
+                                                <%= row.name%>
+                                            </td>
+                                            <td>
+                                                <%= row.phone%>
+                                            </td>
+                                            <td>
+                                                <%= row.expectedDate%>
+                                            </td>
+                                            <td>
+                                                <%= row.expectedSlot%>
+                                            </td>
+                                            <td>
+                                                <%= row.tableNumber%>
+                                            </td>
+                                            <td class="delete-booking"><a href="/adminLogin/customer/delete/<%=row.id%>"
+                                                    onclick="return deleteBooking('<%= row.id%>')"><i
+                                                        class="fa-solid fa-trash"></i></a></td>
                                         </tr>
                                         <% }); %>
                                 </tbody>
                             </table>
                         </div>
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
