@@ -17,21 +17,21 @@ const login = require('./routes/login');
 
 const app = express();
 
-//view engine setup
-app.set('view engine', "ejs");
-app.set('views', path.join(__dirname, 'views'));
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use(session({
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
   saveUninitialized: true,
   cookie: { maxAge: 1000 * 60 * 60 },
   resave: false,
-  domain: ".kind-jade-bunny-gown.cyclic.app",
+  domain: ".dreamon.so",
 }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('view engine', "ejs");
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(fileUplode({
   limits: {
     fieldSize: 10000000,
