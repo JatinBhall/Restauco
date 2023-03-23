@@ -30,7 +30,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { maxAge: 1000 * 60 * 60 },
   resave: false,
-  domain: "https://kind-jade-bunny-gown.cyclic.app",
+  domain: ".kind-jade-bunny-gown.cyclic.app",
 }));
 app.use(fileUplode({
   limits: {
