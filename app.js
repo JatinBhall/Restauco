@@ -28,8 +28,9 @@ app.use(cookieParser());
 app.use(session({
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
   saveUninitialized: true,
-  cookie: { maxAge: 1000 * 60 * 60 * 24 },
-  resave: false
+  cookie: { maxAge: 1000 * 60 * 60 },
+  resave: false,
+  domain: "https://kind-jade-bunny-gown.cyclic.app",
 }));
 app.use(fileUplode({
   limits: {
