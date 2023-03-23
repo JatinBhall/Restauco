@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(session({
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
   saveUninitialized: true,
-  cookie: { maxAge: 1000 * 60 * 60 },
+  cookie: { maxAge: 1000 * 60 * 60 * 24 },
   resave: false
 }));
 app.use(fileUplode({
