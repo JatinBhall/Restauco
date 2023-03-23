@@ -23,9 +23,8 @@ app.use(session({
   saveUninitialized: true,
   cookie: {
     maxAge: 1000 * 60 * 60,
-    domain: ".dreamon.so",
   },
-  resave: false,
+  resave: true,
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
