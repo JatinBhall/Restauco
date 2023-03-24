@@ -3,7 +3,7 @@ const reservationModel = require('../models/reservationModel');
 
 const logIn = (req, res, next) => {
     let session = req.session;
-    if (session.userId) {
+    if (res.locals.userId) {
         next();
     } else {
         res.redirect('/loginForm');
