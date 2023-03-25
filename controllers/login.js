@@ -42,11 +42,17 @@ const login = async function (req, res) {
             throw err;
         }
         req.session.regenerate(function (err) {
-            if (err) throw err;
+            if (err) {
+                console.log(err);
+                throw err;
+            }
 
             req.session.user = userName;
             req.session.save(function (err) {
-                if (err) throw err;
+                if (err) {
+                    console.log(err);
+                    throw err;
+                }
 
                 res.redirect('/adminLogin/adminView');
             });
