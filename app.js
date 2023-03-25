@@ -38,10 +38,10 @@ let sessionOption = {
   name: 'restaucoSession',
   resave: false,
 }
-// if (true) {
-//   app.set('trust proxy', 1);
-//   sessionOption.cookie.secure = true;
-// }
+if (true) {
+  app.set('trust proxy', 1);
+  sessionOption.cookie.secure = true;
+}
 
 app.set('view engine', "ejs");
 app.set('views', path.join(__dirname, 'views'));
