@@ -23,13 +23,14 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
   saveUninitialized: true,
   cookie: {
     maxAge: 1000 * 60 * 60,
+    secure: true,
   },
   resave: false,
 }));
