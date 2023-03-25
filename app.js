@@ -17,7 +17,7 @@ const login = require('./routes/login');
 
 const app = express();
 
-app.set('trust proxy', 1);
+// app.set('trust proxy', 1);
 app.set('view engine', "ejs");
 app.set('views', path.join(__dirname, 'views'));
 
@@ -31,7 +31,7 @@ app.use(session({
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
   saveUninitialized: true,
   cookie: {
-    secure: true,
+    secure: false,
     maxAge: 1000 * 60 * 60,
   },
   resave: false,
