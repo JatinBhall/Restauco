@@ -5,10 +5,10 @@ const reservationModel = require('../models/reservationModel');
 const logIn = async (req, res, next) => {
     let userId = req.session.userId;
     if (userId) {
-        console.log('nooooo');
+        console.log('yess');
         next();
     } else {
-        console.log('yesss');
+        console.log('nooooo');
         res.redirect('/loginForm');
     }
 }
