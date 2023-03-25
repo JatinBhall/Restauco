@@ -2,7 +2,7 @@ const menuModel = require('../models/menuModel');
 const reservationModel = require('../models/reservationModel');
 
 const logIn = (req, res, next) => {
-    if (req.session.userId) {
+    if (req.session.user) {
         console.log(req.session.userId);
         next('route');
     } else {
@@ -12,7 +12,7 @@ const logIn = (req, res, next) => {
 
 const adminView = async (req, res) => {
     let data = {
-        userId: req.session.userId,
+        userId: req.session.user,
     };
     data.focus = 'menu';
     if (req.session.focus == 'customer') {

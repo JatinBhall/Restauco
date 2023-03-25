@@ -45,7 +45,7 @@ const login = async function (req, res) {
             if (err) throw err;
 
             res.locals.userId = userName;
-            req.session.userId = userName;
+            req.session.user = userName;
             req.session.save(function (err) {
                 if (err) throw err;
 
