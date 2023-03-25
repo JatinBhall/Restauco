@@ -3,7 +3,8 @@ const reservationModel = require('../models/reservationModel');
 
 const logIn = (req, res, next) => {
     if (req.session.user) {
-        console.log(req.session.userId);
+        console.log("checkking Auth..");
+        console.log(req.session.user);
         next('route');
     } else {
         res.redirect('/loginForm');
