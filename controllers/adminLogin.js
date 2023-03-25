@@ -37,7 +37,7 @@ const adminView = async (req, res) => {
 
 
 const logOut = (req, res) => {
-    req.session.userId = null;
+    req.session.user = null;
     req.session.save(function (err) {
         if (err) next(err)
         req.session.regenerate(function (err) {

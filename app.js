@@ -18,27 +18,27 @@ const login = require('./routes/login');
 const app = express();
 
 let sessionOption = {
-  secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
+  secret: "thisismysecrctekey JATIN BHALL this should be enough Right!",
   saveUninitialized: true,
   cookie: {
     maxAge: 1000 * 60 * 60,
-    // httpOnly: false,
-},
+    httpOnly: false,
+  },
   resave: false,
 }
-// if (true) {
-//   sessionOption.cookie.secure = true;
-//   app.set('trust proxy', 1);
-// }
+if (true) {
+  app.set('trust proxy', 1);
+  sessionOption.cookie.secure = true;
+}
 
 app.set('view engine', "ejs");
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(session(sessionOption));
+app.use(express.json());
 app.use(cookieParser());
+app.use(session(sessionOption));
 
 
 app.use(fileUplode({
