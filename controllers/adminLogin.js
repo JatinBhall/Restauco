@@ -2,8 +2,7 @@ const menuModel = require('../models/menuModel');
 const reservationModel = require('../models/reservationModel');
 
 const logIn = (req, res, next) => {
-    let session = req.session;
-    if (session.userId) {
+    if (req.session.userId) {
         next();
     } else {
         res.redirect('/loginForm');
