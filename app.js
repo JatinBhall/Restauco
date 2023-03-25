@@ -25,11 +25,11 @@ let sessionOption = {
 },
   resave: false,
 }
-app.use(session(sessionOption));
 if (true) {
   sessionOption.cookie.secure = true;
   app.set('trust proxy', 1);
 }
+app.use(session(sessionOption));
 
 app.set('view engine', "ejs");
 app.set('views', path.join(__dirname, 'views'));
