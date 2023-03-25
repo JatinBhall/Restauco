@@ -17,7 +17,18 @@ const login = require('./routes/login');
 
 const app = express();
 
-// app.set('trust proxy', 1);
+let sessionOption = {
+  secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
+  saveUninitialized: true,
+  cookie: { maxAge: 1000 * 60 * 60, },
+  resave: false,
+}
+app.use(session(sessionOption));
+if (true) {
+  sessionOption.cookie.secure = true;
+  app.set('trust proxy', 1);
+}
+
 app.set('view engine', "ejs");
 app.set('views', path.join(__dirname, 'views'));
 
@@ -27,15 +38,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
-app.use(session({
-  secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
-  saveUninitialized: true,
-  cookie: {
-    secure: false,
-    maxAge: 1000 * 60 * 60,
-  },
-  resave: false,
-}));
 
 app.use(fileUplode({
   limits: {
