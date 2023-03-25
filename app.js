@@ -17,6 +17,13 @@ const login = require('./routes/login');
 
 const app = express();
 
+app.set('trust proxy', 1);
+app.set('view engine', "ejs");
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
@@ -26,13 +33,6 @@ app.use(session({
   },
   resave: false,
 }));
-
-app.set('view engine', "ejs");
-app.set('views', path.join(__dirname, 'views'));
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
 app.use(fileUplode({
   limits: {
     fieldSize: 10000000,
