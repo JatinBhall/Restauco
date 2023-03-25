@@ -5,16 +5,18 @@ const reservationModel = require('../models/reservationModel');
 const logIn = async (req, res, next) => {
     let userId = req.session.user;
     if (userId) {
-        try {
-            let result = await adminModel.read(userId);
-            if (result[0].userId == userId) {
+        // try {
+            // let result = await adminModel.read(userId);
+            // if (result[0].userId == userId) {
                 next('route');
-            } else {
-                res.redirect('/loginForm');
-            }
-        } catch (error) {
-            console.log(error);
-        }
+            // } else {
+                // res.redirect('/loginForm');
+            // }
+        // } catch (error) {
+        //     console.log('at session check');
+        //     console.log(error);
+        // }
+        // res.redirect('/loginForm');
     } else {
         res.redirect('/loginForm');
     }
