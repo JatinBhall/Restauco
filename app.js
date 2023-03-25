@@ -22,14 +22,14 @@ let sessionOption = {
   saveUninitialized: true,
   cookie: {
     maxAge: 1000 * 60 * 60,
-    httpOnly: false,
+    // httpOnly: false,
 },
   resave: false,
 }
-if (false) {
-  sessionOption.cookie.secure = true;
-  app.set('trust proxy', 1);
-}
+// if (true) {
+//   sessionOption.cookie.secure = true;
+//   app.set('trust proxy', 1);
+// }
 
 app.set('view engine', "ejs");
 app.set('views', path.join(__dirname, 'views'));
