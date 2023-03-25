@@ -20,7 +20,7 @@ const app = express();
 let sessionOption = {
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right! ",
   saveUninitialized: true,
-  cookie: { maxAge: 1000 * 60 * 60, },
+  // cookie: { maxAge: 1000 * 60 * 60, },
   resave: false,
 }
 app.use(session(sessionOption));
