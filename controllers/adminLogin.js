@@ -2,6 +2,7 @@ const menuModel = require('../models/menuModel');
 const reservationModel = require('../models/reservationModel');
 
 const logIn = (req, res, next) => {
+    console.log(req.session);
     if (req.session.user) {
         console.log("checkking Auth..");
         console.log(req.session.user);
