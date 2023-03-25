@@ -26,19 +26,18 @@ let sessionOption = {
 },
   resave: false,
 }
-if (true) {
+if (false) {
   sessionOption.cookie.secure = true;
   app.set('trust proxy', 1);
 }
-app.use(session(sessionOption));
 
 app.set('view engine', "ejs");
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(session(sessionOption));
 app.use(cookieParser());
 
 
