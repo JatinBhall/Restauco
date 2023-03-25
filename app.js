@@ -31,13 +31,9 @@ let sessionOption = {
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right!",
   saveUninitialized: true,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 24,
-    // httpOnly: false,
-    // secure: true,
-    // sameSite: true,
+    maxAge: 1000 * 60 * 60,
   },
   store: sessionStore,
-  // proxy: true,
   name: 'restaucoSession',
   resave: false,
 }
