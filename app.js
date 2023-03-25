@@ -2,6 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const fileUplode = require('express-fileupload');
+const MtSQLStore = require('express-mysql-session')(session);
 const path = require('path');
 const createError = require('http-errors');
 const port = 8080;
@@ -17,23 +18,33 @@ const login = require('./routes/login');
 
 const app = express();
 
+const option = {
+  host: 'sql12.freesqldatabase.com',
+  user: 'sql12608063',
+  database: 'sql12608063',
+  password: 'g3FjXbVzNB',
+};
+
+const sessionStore = new MtSQLStore(option);
+
 let sessionOption = {
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right!",
   saveUninitialized: true,
   cookie: {
     maxAge: 1000 * 60 * 60 * 24,
-    httpOnly: false,
-    secure: true,
-    sameSite: true,
+    // httpOnly: false,
+    // secure: true,
+    // sameSite: true,
   },
-  proxy: true,
+  store: sessionStore,
+  // proxy: true,
   name: 'restaucoSession',
   resave: false,
 }
-// if (true) {
-//   app.set('trust proxy', 1);
-//   sessionOption.cookie.secure = true;
-// }
+if (true) {
+  app.set('trust proxy', 1);
+  sessionOption.cookie.secure = true;
+}
 
 app.set('view engine', "ejs");
 app.set('views', path.join(__dirname, 'views'));
