@@ -15,6 +15,7 @@ const reservation = require('./routes/reservation');
 const adminLogin = require('./routes/adminLogin');
 const loginForm = require('./routes/loginForm');
 const login = require('./routes/login');
+const connection = require('./utils/connection');
 
 const app = express();
 
@@ -25,7 +26,7 @@ const option = {
   password: 'g3FjXbVzNB',
 };
 
-const sessionStore = new MtSQLStore(option);
+const sessionStore = new MtSQLStore({},connection);
 
 let sessionOption = {
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right!",
@@ -37,10 +38,10 @@ let sessionOption = {
   name: 'restaucoSession',
   resave: false,
 }
-if (true) {
-  app.set('trust proxy', 1);
-  sessionOption.cookie.secure = true;
-}
+// if (true) {
+//   app.set('trust proxy', 1);
+//   sessionOption.cookie.secure = true;
+// }
 
 app.set('view engine', "ejs");
 app.set('views', path.join(__dirname, 'views'));
