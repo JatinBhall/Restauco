@@ -34,10 +34,10 @@
     </div>
     <script src="./javascripts/loginForm/loginForm.js"></script>
     <script>
-        let validation = `<%- locals%>`;
-        validation = JSON.parse(validation);
-        if (validation) {
-            let data = JSON.parse(validation);
+        let validation = '<%- JSON.stringify(locals)%>';
+        data = JSON.parse(validation);
+        if (data) {
+            // let data = JSON.parse(validation);
             alert("TRY AGAIN, " + data.errMessage);
         }
     </script>

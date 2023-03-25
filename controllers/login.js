@@ -45,7 +45,6 @@ const login = async function (req, res) {
             if (err) throw err;
 
             req.session.userId = userName;
-
             req.session.save(function (err) {
                 if (err) throw err;
 
@@ -56,8 +55,7 @@ const login = async function (req, res) {
     } catch (err) {
         console.log(err);
         validation.userId = userId;
-        let locals = JSON.stringify(validation);
-        res.render('loginForm', { locals: locals });
+        res.render('loginForm', { locals: validation });
     }
 };
 

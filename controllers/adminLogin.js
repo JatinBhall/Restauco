@@ -3,7 +3,8 @@ const reservationModel = require('../models/reservationModel');
 
 const logIn = (req, res, next) => {
     if (req.session.userId) {
-        next();
+        console.log(req.session.userId);
+        next('route');
     } else {
         res.redirect('/loginForm');
     }
@@ -34,10 +35,16 @@ const adminView = async (req, res) => {
     res.render('adminView', { locals: data });
 };
 
+
 const logOut = (req, res) => {
-    console.log("in side LogOut");
-    req.session.destroy();
-    res.redirect('/');
+    req.session.userId = null;
+    req.session.save(function (err) {
+        if (err) next(err)
+        req.session.regenerate(function (err) {
+            if (err) next(err)
+            res.redirect('/')
+        })
+    })
 };
 
 
