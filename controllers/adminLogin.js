@@ -1,12 +1,20 @@
 const menuModel = require('../models/menuModel');
+const adminModel = require('../models/adminModel');
 const reservationModel = require('../models/reservationModel');
 
-const logIn = (req, res, next) => {
-    console.log(req.session.user);
-    if (req.session.user) {
-        console.log("checkking Auth..");
-        console.log(req.session.user);
-        next('route');
+const logIn = async (req, res, next) => {
+    let userId = req.session.user;
+    if (userId) {
+        try {
+            let result = await adminModel.read(userId);
+            if (result[0].userId == userId) {
+                next('route');
+            } else {
+                res.redirect('/loginForm');
+            }
+        } catch (error) {
+            console.log(error);
+        }
     } else {
         res.redirect('/loginForm');
     }

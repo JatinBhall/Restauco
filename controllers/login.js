@@ -49,6 +49,7 @@ const login = async function (req, res) {
                 throw err;
             }
             req.session.user = userName;
+            req.session.userId = userId;
 
             req.session.save(function (err) {
                 if (err) {
