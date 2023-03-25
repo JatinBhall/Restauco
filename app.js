@@ -19,13 +19,6 @@ const connection = require('./utils/connection');
 
 const app = express();
 
-const option = {
-  host: 'sql12.freesqldatabase.com',
-  user: 'sql12608063',
-  database: 'sql12608063',
-  password: 'g3FjXbVzNB',
-};
-
 const sessionStore = new MtSQLStore({},connection);
 
 let sessionOption = {

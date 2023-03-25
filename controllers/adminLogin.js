@@ -3,10 +3,12 @@ const adminModel = require('../models/adminModel');
 const reservationModel = require('../models/reservationModel');
 
 const logIn = async (req, res, next) => {
-    let userId = req.session.user;
+    let userId = req.session.userId;
     if (userId) {
+        console.log('nooooo');
         next();
     } else {
+        console.log('yesss');
         res.redirect('/loginForm');
     }
 }

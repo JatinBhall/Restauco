@@ -41,16 +41,14 @@ const login = async function (req, res) {
             validation.errMessage = "Sorry for delay. Try again ☺";
             throw err;
         }
-        // req.session.user = userName;
-        // res.redirect('/adminLogin/adminView');
         req.session.regenerate(function (err) {
             if (err) {
                 console.log(err);
                 throw err;
             }
+
             req.session.user = userName;
             req.session.userId = userId;
-
             req.session.save(function (err) {
                 if (err) {
                     console.log(err);
