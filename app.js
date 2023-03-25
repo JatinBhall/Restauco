@@ -32,13 +32,13 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(session({
   secret: "thisismysecrctekey JATIN BHALL this should be enough Right!",
-  // saveUninitialized: true,
+  saveUninitialized: true,
   cookie: {
     path: '/',
     maxAge: 1000 * 60 * 60 * 24,
     httpOnly: false,
   },
-  // resave: false,
+  resave: false,
 }));
 
 
