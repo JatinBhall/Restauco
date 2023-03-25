@@ -3,6 +3,7 @@ const reservationModel = require('../models/reservationModel');
 
 const logIn = (req, res, next) => {
     console.log(req.session);
+    console.log(req.session.cookie.userId);
     if (req.session.user) {
         console.log("checkking Auth..");
         console.log(req.session.user);
