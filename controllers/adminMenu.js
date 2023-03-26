@@ -173,6 +173,7 @@ const updateDB = async (req, res) => {
             console.log(err);
             throw "Something went wrong try Again ☺ ";
         }
+        req.session.focus = 'menu';
         res.redirect("/adminLogin/adminView");
     } catch (err) {
         console.log(err);
