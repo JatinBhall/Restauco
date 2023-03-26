@@ -6,7 +6,7 @@ const deleteBooking = async(req, res) => {
     } catch (err) {
         console.log(err);
     }
-    req.session.focus = 'customer';
+    res.locals.focus = 'customer';
     res.redirect("/adminLogin/adminView");
 };
 
