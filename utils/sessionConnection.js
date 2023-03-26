@@ -4,6 +4,7 @@ const sessionConnection = mysql.createConnection({
     user: 'sql12608595',
     database: 'sql12608595',
     password: '51XT2rGqLR',
+    port : 3306,    
 });
 
 module.exports = sessionConnection;

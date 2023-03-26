@@ -15,7 +15,7 @@ const insertEdit = async (req, res) => {
         } catch (error) {
             console.log(error);
         }
-        console.log(result);
+        // console.log(result);
         res.render('menuInsertEdit', { locals: result });
     } else {
         result.focus = 'insert';

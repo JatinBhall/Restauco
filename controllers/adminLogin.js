@@ -35,7 +35,7 @@ const adminView = async (req, res) => {
         console.log(error);
     }
 
-    console.log(data);
+    // console.log(data);
     res.render('adminView', { locals: data });
 };
 
