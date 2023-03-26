@@ -75,7 +75,7 @@
             }
         } else {
             document.querySelector("#submit-button").textContent = "Updata Item";
-            document.querySelector("form").action = "/adminLogin/menu/updateDB/<%=locals.userId%>";
+            document.querySelector("form").action = "/adminLogin/menu/updateDB/" + data.userId;
             document.querySelector("#form-heading").textContent = "Update Menu Item";
             if (data.display == 'data') {
                 showData(data.itemData[0]);
@@ -86,5 +86,4 @@
         }
     </script>
 </body>
-
 </html>
