@@ -18,7 +18,7 @@ const adminView = async (req, res) => {
         userId: req.session.user,
     };
     data.focus = 'menu';
-    if (req.session.focus == 'customer') {
+    if (res.locals.focus == 'customer') {
         data.focus = 'customer';
     }
 
@@ -40,7 +40,7 @@ const adminView = async (req, res) => {
 
 
 const logOut = (req, res) => {
-    req.session.userId = null;
+    res.locals.userId = null;
     req.session.save(function (err) {
         if (err) next(err)
         req.session.regenerate(function (err) {
