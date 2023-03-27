@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
     host: 'sql12.freesqldatabase.com',
     user: 'sql12608063',
     database: 'sql12608063',

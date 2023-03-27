@@ -15,7 +15,7 @@ const reservation = require('./routes/reservation');
 const adminLogin = require('./routes/adminLogin');
 const loginForm = require('./routes/loginForm');
 const login = require('./routes/login');
-const sessionConnection = require('./utils/sessionConnection');
+const sessionConnection = require('./utils/connection');
 
 const app = express();
 
