@@ -155,14 +155,14 @@ const updateDB = async (req, res) => {
             throw "Invalid Inputs. Try Again ☺.";
         }
         try {
-            // let result = await menuModel.readMenu(req.params.userId);
-            // fs.unlink(imageRelativePath + result[0].imageName, (err) => {
-            //     if (err) {
-            //         console.log("Could not delete the file. " + err);
-            //     } else {
-            //         console.log("File is deleted");
-            //     }
-            // });
+            let result = await menuModel.readMenu(req.params.userId);
+            fs.unlink(imageRelativePath + result[0].imageName, (err) => {
+                if (err) {
+                    console.log("Could not delete the file. " + err);
+                } else {
+                    console.log("File is deleted");
+                }
+            });
             await menuModel.deleteItem(req.params.userId);
         } catch (err) {
             console.log();
@@ -192,14 +192,14 @@ const updateDB = async (req, res) => {
 
 const deleteItem = async (req, res) => {
     try {
-        // let result = await menuModel.readMenu(req.params.userId);
-        // fs.unlink(imageRelativePath + result[0].imageName, (err) => {
-        //     if (err) {
-        //         console.log("Could not delete the file. " + err);
-        //     } else {
-        //         console.log("File is deleted");
-        //     }
-        // });
+        let result = await menuModel.readMenu(req.params.userId);
+        fs.unlink(imageRelativePath + result[0].imageName, (err) => {
+            if (err) {
+                console.log("Could not delete the file. " + err);
+            } else {
+                console.log("File is deleted");
+            }
+        });
         await menuModel.deleteItem(req.params.userId);
     } catch (err) {
         console.log();
