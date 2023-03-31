@@ -4,6 +4,7 @@ const reservationModel = require('../models/reservationModel');
 
 const logIn = async (req, res, next) => {
     let userId = req.session.userId;
+    console.log(userId);
     if (userId) {
         console.log('yess');
         next();

@@ -55,6 +55,7 @@ const login = async function (req, res) {
                     throw err;
                 }
 
+                console.log(req.session.userId);
                 res.redirect('/adminLogin/adminView');
             });
         });
