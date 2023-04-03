@@ -9,6 +9,7 @@ const homeView =async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+    console.log(data);
     res.render('home', { locals: data });
 };
 
