@@ -31,7 +31,7 @@ let sessionOption = {
   name: 'restaucoSession',
   resave: false,
 }
-if (true) {
+if (false) {
   app.set('trust proxy', 1);
   sessionOption.cookie.secure = true;
 }
