@@ -1,9 +1,10 @@
 const mysql = require('mysql');
 const connection = mysql.createPool({
-    host: 'databases.000webhost.com',
-    user: 'id19557630_jatinbhall',
-    database: 'id19557630_restauco',
-    password: '*-9OJnPARU6Wr^@s',
+    host: 'sql12.freesqldatabase.com',
+    user: 'sql12610018',
+    database: 'sql12610018',
+    password: 'xuCRPbtctA',
+    port : 3306,
 
 });
 
