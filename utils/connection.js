@@ -1,9 +1,9 @@
 const mysql = require('mysql');
 const connection = mysql.createPool({
-    host: 'sql12.freesqldatabase.com',
-    user: 'sql12619635',
-    database: 'sql12619635',
-    password: 'WYefAV2C5J',
+    host: 'sql6.freesqldatabase.com',
+    user: 'sql6641887',
+    database: 'sql6641887',
+    password: 'f8NEnuMp1m',
     port : 3306,
     // host: "localhost",
     // user: "root",
